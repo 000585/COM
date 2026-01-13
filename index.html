@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<title>Фонд ЧЕСТНЫЙ ПОЛИТЗЕК | Комитет Солидарности Репрессированных</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Официальный сайт Фонда 'Честный политзек' и Комитета Солидарности. Помощь репрессированным, юридическая защита, криптовалюта CHUDO."/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>"/>
+<style>
+:root{--bg:#0b1120;--bg-alt:#020617;--fg:#e5e7eb;--muted:#9ca3af;--accent:#1d4ed8;--accent-soft:#111827;--border:#1f2937;--card:#020617;--danger:#dc2626;--shadow:0 18px 40px rgba(15,23,42,.75)}
+[data-theme="light"]{--bg:#f3f4f6;--bg-alt:#fff;--fg:#111827;--accent-soft:#e5e7eb;--border:#d1d5db;--card:#fff;--shadow:0 18px 40px rgba(15,23,42,.15)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;overflow-x:hidden;padding-bottom:150px;transition:background-color .5s,color .5s,border-color .5s}
+a{text-decoration:none;color:inherit}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@keyframes holo{0%{background-position:0%}100%{background-position:200%}}
+.holo-text{background:linear-gradient(90deg,#00f260,#0575e6,#f200cb,#00f260);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:holo 3s linear infinite;position:relative;overflow:hidden}
+.hero{width:100%;height:45vh;min-height:220px;max-height:420px;position:relative;overflow:hidden;opacity:0;transform:translateY(-10px);animation:heroFadeIn .9s ease-out forwards;border:2px solid #000;background:#000;z-index:1}
+@keyframes heroFadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.hero-stripes{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,#fff 0%,#fff 33.33%,#ff0000 33.33%,#ff0000 66.66%,#fff 66.66%,#fff 100%);transform:rotateX(5deg);transform-origin:center bottom;animation:stripes3D 6s infinite ease-in-out;pointer-events:none}
+@keyframes stripes3D{0%,100%{transform:rotateX(5deg) rotateY(0)}25%{transform:rotateX(5deg) rotateY(2deg)}50%{transform:rotateX(5deg) rotateY(0)}75%{transform:rotateX(5deg) rotateY(-2deg)}}
+.hero-top-text{position:absolute;top:20%;left:50%;transform:translateX(-50%);width: 90%; max-width: 1000px; pointer-events:none;z-index:5; display: flex; justify-content: center; align-items: center;}
+.hero-top-wrapper { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; pointer-events: auto; }
+
+.survey-brand-btn { 
+    background: var(--accent); 
+    color: #fff; 
+    padding: 10px 24px; 
+    border-radius: 24px; 
+    font-family: sans-serif; 
+    font-weight: bold; 
+    font-size: 1.1rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center; 
+    gap: 8px; 
+    text-decoration: none; 
+    box-shadow: 0 0 15px rgba(29, 78, 216, 0.6); 
+    border: 2px solid rgba(255,255,255,0.2); 
+    pointer-events: auto; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    max-width: 90vw; 
+}
+.survey-brand-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(29, 78, 216, 0.9); }
+
+.yt-brand-btn { pointer-events: auto; background: #FF0000; color: #fff; padding: 10px 24px; border-radius: 24px; font-family: sans-serif; font-weight: bold; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; text-decoration: none; box-shadow: 0 0 15px rgba(255,0,0,0.6); transition: transform 0.2s ease, box-shadow 0.2s ease; border: 2px solid rgba(255,255,255,0.2); }
+.yt-brand-btn:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,0,0,0.9); }
+.yt-icon-svg { width: 24px; height: 24px; fill: #fff; }
+
+.hero-marquee-wrapper{position:absolute;bottom:40px;width:100%;overflow:hidden;pointer-events:none;z-index:6}
+.hero-text{display:inline-block;white-space:nowrap;font-size:3.5rem;font-weight:800;text-transform:uppercase;line-height:.9;padding-left:100%;animation:marquee 30s linear infinite,holoShift 3s infinite linear}
+@keyframes marquee{0%{transform:translate(0,0)}100%{transform:translate(-100%,0)}}
+@keyframes holoShift{0%{background-position:0%}100%{background-position:200%}}
+.noise-bg{position:absolute;top:0;left:0;width:100%;height:100%;background-image:repeating-radial-gradient(#000 0 0.0001%,#fff 0 0.0002%);opacity:0.04;pointer-events:none;z-index:0}
+.coin-container{width:90px;height:90px;margin:0 auto 15px auto;perspective:1000px}
+.coin{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:spinCoin 4s linear infinite;will-change:transform}
+.coin-face{position:absolute;width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#713f12;background:radial-gradient(circle at 30% 30%,#fcd34d,#f59e0b);border:3px solid #b45309;box-shadow:0 0 15px rgba(251,191,36,.5);backface-visibility:hidden}
+.back { transform: rotateY(180deg) translateZ(5px); background: radial-gradient(circle at 30% 30%, #f3f4f6, #9ca3af); color: #374151; border-color: #9ca3af; box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); }
+.front{transform:translateZ(5px)}
+@keyframes spinCoin{0%{transform:rotateY(0deg)}100%{transform:rotateY(360deg)}}
+.spin-fast { animation-duration: 3s !important; }
+.spin-medium { animation-duration: 5s !important; }
+.tilt-card{transition:transform .3s ease;transform-style:preserve-3d}
+.tilt-card:hover{transform:perspective(1000px) rotateX(var(--ry,0)) rotateY(var(--rx,0)) scale(1.02)}
+.lang-bar{background:var(--bg-alt);position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.lang-bar-inner{max-width:1120px;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:flex-end;gap:1rem}
+.globe-btn{background:var(--card);border:2px solid var(--border);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.3rem;transition:.3s}
+.globe-btn:hover{border-color:var(--accent);transform:scale(1.1)}
+.globe-flags{position:absolute;right:0;top:50px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.5rem;display:none;grid-template-columns:repeat(3,1fr);gap:.4rem;min-width:300px;box-shadow:var(--shadow);z-index:1001;max-height: 60vh; overflow-y: auto;}
+.globe-flags.show{display:grid}
+.flag-item{display:flex;align-items:center;gap:8px;padding:.5rem;border-radius:8px;cursor:pointer;transition:.2s;font-size:.8rem;color:var(--fg);text-decoration:none;}
+.flag-item:hover{background:var(--accent-soft);color:var(--accent)}
+.fi { width: 1.2em; height: 1em; background-size: cover; border-radius: 2px; }
+.theme-toggle{background:var(--card);border:2px solid var(--border);border-radius:999px;padding:.4rem .8rem;cursor:pointer;min-width:44px;font-size:1.2rem}
+.card-scroll{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:1rem;max-width:1120px;margin:0 auto}
+
+.info-card {
+    min-width:320px;
+    max-width:380px;
+    scroll-snap-align:start;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:1.8rem;
+    background:var(--card);
+    box-shadow:var(--shadow);
+    transition:transform .3s ease,box-shadow .3s ease; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: auto; 
+}
+.info-card .btn-primary {
+    margin-top: auto; 
+}
+
+.info-card h3{margin:0 0 1rem;color:var(--fg);border-bottom:2px solid var(--accent);padding-bottom:.5rem; text-align: start;}
+.info-card p{color:var(--muted);font-size:.95rem; text-align: start; flex-grow: 1;}
+.photo-card{padding:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:500px;border:none;position:relative}
+.photo-card-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+.photo-card-content{position:relative;z-index:10;background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,0) 100%);padding:2rem;color:#fff;text-align:center}
+.photo-card h3 { text-align: center; }
+.photo-card p { text-align: center; color: #ccc; font-size: 0.9rem; margin-top: 5px; }
+
+.btn-primary{display:block;text-align:center;padding:.85rem;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;margin-top:1rem;transition:.3s;position:relative;z-index:20;border:none}
+.btn-primary:hover{transform:scale(1.02);background:#1e40af}
+.site-footer{border-top:1px solid var(--border);background:var(--bg-alt);padding:2rem 1rem 3rem;margin-top:4rem}
+.footer-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.footer-block h3{margin-bottom:1rem;color:var(--fg);border-bottom:2px solid var(--accent);padding-bottom:.5rem}
+.footer-block li{margin-bottom:8px;color:var(--muted);list-style:none}
+
+.social-grid{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;transition:.3s;color:#fff;position:relative;z-index:10}
+.social-btn:hover{transform:scale(1.1);filter:brightness(1.15)}
+.social-icon{width:20px;height:20px;fill:currentColor}
+.social-yt{background:#FF0000}.social-tg{background:#229ED9}.social-fb{background:#1877F2}.social-x{background:#000;border:1px solid #333}.social-ig{background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)}
+.social-tt{background:#000000;border:1px solid #333;filter:drop-shadow(0 0 2px rgba(255,255,255,0.3))}
+
+.seo-article{max-width:1120px;margin:3rem auto;padding:0 1rem;font-size:0.95rem;color:var(--muted);line-height:1.7}
+.seo-article h1, .seo-article h2, .seo-article h3 { color: var(--fg); margin-top: 1.5rem; }
+.seo-article p { margin-bottom: 1rem; }
+.seo-article ul { margin-bottom: 1rem; padding-left: 20px; }
+.seo-article li { margin-bottom: 0.5rem; }
+.payment-section{max-width:1120px;margin:3rem auto;padding:0 1rem;display:flex;flex-direction:column;gap:1.5rem}
+.payment-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;transition:.3s}
+.payment-card:hover{transform:translateY(-3px);border-color:var(--accent)}
+.copy-box{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);padding:.6rem;border-radius:8px;font-family:monospace;font-size:.8rem;margin-top:5px;border:1px solid rgba(255,255,255,.05)}
+.val{flex-grow:1;word-break:break-all;color:var(--fg)}
+.copy-btn{background:var(--accent);color:#fff;border:none;padding:.4rem .6rem;border-radius:6px;cursor:pointer;font-weight:bold;font-size:.75rem;white-space:nowrap}
+.net-badge{display:inline-block;background:var(--danger);color:#fff;font-size:.7rem;padding:2px 6px;border-radius:4px;font-weight:bold;margin-inline-start:5px;vertical-align:middle}
+.btn-danger{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:92%;max-width:480px;padding:1rem;border-radius:50px;background:var(--danger);color:#fff;font-weight:bold;box-shadow:0 8px 24px rgba(220,38,38,.55);z-index:9999;border:2px solid rgba(255,255,255,.2);animation:pulseBtn 2s infinite}
+@keyframes pulseBtn{0%{box-shadow:0 0 0 0 rgba(220,38,38,.4)}70%{box-shadow:0 0 0 12px rgba(220,38,38,0)}100%{box-shadow:0 0 0 0 rgba(220,38,38,0)}}
+.btn-danger:hover{transform:translateX(-50%) scale(1.05);background:#b91c1c}
+</style>
+</head>
+
+<body>
+<div class="hero">
+  <div class="noise-bg"></div><div class="hero-stripes"></div>
+  <div class="hero-top-text">
+    <div class="hero-top-wrapper">
+        <a href="https://www.youtube.com/channel/UCTXAwovvaec4w9ztbggWMEQ" target="_blank" rel="noopener noreferrer" class="yt-brand-btn">
+            <svg class="yt-icon-svg" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+            YouTube
+        </a>
+        <a href="https://6900903-ai.github.io/com/" target="_blank" class="survey-brand-btn" data-i18n="hero_survey_btn">
+            📝 Анкета на оказание помощи репрессированным
+        </a>
+    </div>
+  </div>
+  <div class="hero-marquee-wrapper"><div class="hero-text holo-text" data-i18n="marquee">КОМИТЕТ СОЛИДАРНОСТИ РЕПРЕССИРОВАННЫХ • ЗАЩИТА ПРАВ • СВОБОДА • БЕЗОПАСНОСТЬ И СПРАВЕДЛИВОСТЬ • </div></div>
+  <div class="hero-cursor-trail" id="trail"></div>
+</div>
+
+<nav class="lang-bar">
+  <div class="lang-bar-inner">
+    <div class="lang-globe">
+      <button class="globe-btn" id="globeBtn" type="button" aria-label="Сменить язык / Change Language">🌐</button>
+      <div class="globe-flags" id="globeFlags">
+        <a href="?lang=ru" class="flag-item" data-lang="ru"><span class="fi fi-ru"></span> Русский</a>
+        <a href="?lang=be" class="flag-item" data-lang="be"><span class="fi fi-by"></span> Беларуская</a>
+        <a href="?lang=en" class="flag-item" data-lang="en"><span class="fi fi-gb"></span> English</a>
+        <a href="?lang=pl" class="flag-item" data-lang="pl"><span class="fi fi-pl"></span> Polski</a>
+      </div>
+    </div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему / Toggle Theme"><span id="themeIcon">☀️</span></button>
+  </div>
+</nav>
+
+<main>
+  <section class="card-scroll" id="main">
+    
+    <article class="info-card tilt-card photo-card">
+      <img src="founder1.jpg" alt="Учредитель 1" class="photo-card-bg" loading="lazy" decoding="async" width="380" height="500">
+      <div class="photo-card-content">
+        <h3 class="holo-text" data-i18n="founder1_name">Учредитель 1</h3>
+        <p data-i18n="founder1_bio">Человек слова и чести. Лидер, чья воля к свободе стала примером для тысяч. Прошел через испытания, чтобы сегодня строить новую Беларусь.</p>
+        <a href="#" class="btn-primary" data-i18n="founder_contact">Контакты</a>
+      </div>
+    </article>
+
+    <article class="info-card tilt-card photo-card">
+      <img src="founder2.jpg" alt="Учредитель 2" class="photo-card-bg" loading="lazy" decoding="async" width="380" height="500">
+      <div class="photo-card-content">
+        <h3 class="holo-text" data-i18n="founder2_name">Учредитель 2</h3>
+        <p data-i18n="founder2_bio">Несгибаемый борец за справедливость. Юрист и правозащитник, посвятивший жизнь защите невиновных и борьбе с беззаконием.</p>
+        <a href="#" class="btn-primary" data-i18n="founder_contact">Контакты</a>
+      </div>
+    </article>
+
+    <article class="info-card tilt-card photo-card">
+      <img src="founder3.jpg" alt="Учредитель 3" class="photo-card-bg" loading="lazy" decoding="async" width="380" height="500">
+      <div class="photo-card-content">
+        <h3 class="holo-text" data-i18n="founder3_name">Учредитель 3</h3>
+        <p data-i18n="founder3_bio">Голос правды в темные времена. Общественный деятель, объединяющий людей ради общей цели — свободы и процветания нации.</p>
+        <a href="#" class="btn-primary" data-i18n="founder_contact">Контакты</a>
+      </div>
+    </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin spin-medium">
+          <div class="coin-face front coin-emoji">⚖️</div>
+          <div class="coin-face back coin-emoji">⚖️</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card_hrc_title">Правозащитный центр</h3>
+      <p style="font-size: 0.9em; color: var(--accent); margin-top:-10px; margin-bottom: 10px;" data-i18n="card_hrc_sub">Демократические силы Беларуси</p>
+      <p data-i18n="card_hrc_text">Мы стоим на страже закона там, где его пытаются уничтожить. Наша команда адвокатов работает 24/7, фиксируя нарушения и добиваясь справедливости в международных инстанциях. Мы не просто защищаем — мы возвращаем людям веру в то, что правда обязательно победит.</p>
+      <a href="https://000585.github.io/1" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="card_hrc_btn">Перейти на сайт</a>
+    </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin spin-medium">
+          <div class="coin-face front coin-emoji">❤️</div>
+          <div class="coin-face back coin-emoji">❤️</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card_honest_title">Фонд Честный политзек</h3>
+      <p data-i18n="card_honest_text">Каждый рубль, пожертвованный в фонд, превращается в реальную помощь: оплату адвокатов, покупку лекарств, поддержку детей заключенных. Прозрачность и честность — наши принципы. Мы отчитываемся за каждую копейку, ведь доверие — наша главная валюта.</p>
+      <a href="https://6900903-ai.github.io/6900903-ai/" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="card_honest_btn">Перейти на сайт</a>
+    </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin spin-fast">
+          <div class="coin-face front coin-emoji">🆘</div>
+          <div class="coin-face back coin-emoji">🆘</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card_urgent_title">Срочная помощь</h3>
+      <p data-i18n="card_urgent_text">Беда приходит внезапно, и важно знать, что вы не одни. Если вас уволили, оштрафовали или вам грозит опасность — мы рядом. Наша программа экстренной поддержки создана, чтобы подставить плечо в самую трудную минуту. Не бойтесь просить о помощи — это проявление силы.</p>
+      <a href="https://6900903-ai.github.io/com/" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="card_urgent_btn">Анкета</a>
+    </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin">
+          <div class="coin-face front">CHUDO</div>
+          <div class="coin-face back">KRC20</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card3_title">Криптовалюта CHUDO</h3>
+      <p data-i18n="card3_text">Это не просто цифровой актив, это символ нашей независимости. В мире, где счета блокируются по щелчку пальцев, CHUDO остается неприступной крепостью. Мы строим параллельную экономику свободы, где каждый транш — это акт солидарности, а каждый кошелек — личный банк, неподвластный диктатуре.</p>
+    </article>
+  </section>
+
+  <section class="seo-article">
+    <div data-i18n="seo_text">
+       </div>
+  </section>
+
+  <section class="payment-section">
+    <div class="payment-card">
+      <h3 style="color:var(--accent)">PKO Bank Polski (PLN/EUR)</h3>
+      <div>Card: <strong>4251 2513 6480 1214</strong> (до 11/30)</div>
+      <div>SWIFT: <strong>BPKOPLPW</strong></div>
+      <div style="margin-bottom:5px">
+        <span style="font-size:.7rem;color:var(--muted)">IBAN (PL)</span>
+        <div class="copy-box"><span class="val" id="iban_pl">PL98 1020 1185 0000 4502 0419 7976</span><button class="copy-btn" data-target="iban_pl">Copy</button></div>
+      </div>
+    </div>
+    <div class="payment-card">
+      <h3 style="color:var(--accent)">Revolut (Multicurrency)</h3>
+      <div>Card: <strong>4165 9871 1998 8302</strong> (до 10/30)</div>
+      <div style="margin-bottom:5px">
+        <span style="font-size:.7rem;color:var(--muted)">IBAN (International)</span>
+        <div class="copy-box"><span class="val" id="iban_rev">LT81 3250 0653 6173 6755</span><button class="copy-btn" data-target="iban_rev">Copy</button></div>
+      </div>
+    </div>
+    <div class="payment-card">
+        <h3 style="color:var(--accent)">USDT (TRC-20)</h3>
+        <div class="copy-box"><span class="val" id="usdt">TQMo2KNXE8n961ddNFfJdcH4ZixVmMeU8U</span><button class="copy-btn" data-target="usdt">Copy</button></div>
+    </div>
+  </section>
+</main>
+
+<a href="https://zrzutka.pl/komitet-solidarnosci-represjonowanych" target="_blank" rel="noopener noreferrer" class="btn-danger" data-i18n="support_button">Поддержать сейчас</a>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-block">
+      <h3 class="holo-text" data-i18n="footer_title1">Комитет Солидарности</h3>
+      <ul>
+        <li><strong data-i18n="footer_address">Адрес:</strong> Польша, Варшава, ul. Lokcowa 12</li>
+        <li><strong>Email:</strong> <a href="mailto:6900908@gmail.com">6900908@gmail.com</a></li>
+        <li><strong>Телефон:</strong> <a href="tel:+48795972990">+48795972990</a></li>
+      </ul>
+    </div>
+    <div class="footer-block">
+      <h3 class="holo-text" data-i18n="footer_title3">Соцсети</h3>
+      <div class="social-grid">
+        <a href="https://www.youtube.com/channel/UCTXAwovvaec4w9ztbggWMEQ" target="_blank" rel="noopener noreferrer" class="social-btn social-yt" aria-label="YouTube"><svg class="social-icon" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://t.me/+48795972990" target="_blank" rel="noopener noreferrer" class="social-btn social-tg" aria-label="Telegram"><svg class="social-icon" viewBox="0 0 24 24"><path d="M11.944 0C5.347 0 0 5.347 0 11.944c0 6.597 5.347 11.944 11.944 11.944 6.597 0 11.944-5.347 11.944-11.944C23.888 5.347 18.541 0 11.944 0zm5.204 8.12l-1.764 8.312c-.133.593-.483.738-.982.458l-2.686-1.98-1.296 1.246c-.144.144-.264.264-.54.264l.192-2.73 4.968-4.488c.216-.192-.048-.3-.336-.108L8.568 12.44 5.916 11.61c-.576-.18-.588-.576.12-.852l10.38-4.008c.48-.18.9.108.732.372z"/></svg></a>
+        <a href="https://www.facebook.com/share/1bJi1GCA85/" target="_blank" rel="noopener noreferrer" class="social-btn social-fb" aria-label="Facebook"><svg class="social-icon" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://x.com/CHUDZINOVICH1" target="_blank" rel="noopener noreferrer" class="social-btn social-x" aria-label="X (Twitter)"><svg class="social-icon" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/chudzinovichyury" target="_blank" rel="noopener noreferrer" class="social-btn social-ig" aria-label="Instagram"><svg class="social-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://tiktok.com/@chudzinovich" target="_blank" rel="noopener noreferrer" class="social-btn social-tt" aria-label="TikTok">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:2rem;color:var(--muted);font-size:.8rem">© 2025 <span data-i18n="marquee">Комитет Солидарности</span></p>
+</footer>
+
+<script>
+window.addEventListener('load',()=>{
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get('lang');
+  const userLang = langParam || navigator.language.slice(0, 2) || 'ru';
+  applyLang(userLang);
+});
+
+const translations = {
+  ru: {
+    meta_title: "Комитет Солидарности | Фонд Честный Политзек",
+    meta_desc: "Официальный сайт Комитета солидарности и Фонда Честный политзек. Помощь, правозащита, криптовалюта CHUDO.",
+    marquee: "КОМИТЕТ СОЛИДАРНОСТИ РЕПРЕССИРОВАННЫХ • ЗАЩИТА ПРАВ • СВОБОДА • БЕЗОПАСНОСТЬ И СПРАВЕДЛИВОСТЬ • ",
+    founder1_name: "Имя Фамилия 1",
+    founder1_bio: "Человек слова и чести. Лидер, чья воля к свободе стала примером для тысяч. Прошел через испытания, чтобы сегодня строить новую Беларусь, где каждый голос имеет значение.",
+    founder2_name: "Имя Фамилия 2",
+    founder2_bio: "Несгибаемый борец за справедливость. Юрист и правозащитник, посвятивший жизнь защите невиновных и борьбе с беззаконием, невзирая на давление и угрозы.",
+    founder3_name: "Имя Фамилия 3",
+    founder3_bio: "Голос правды в темные времена. Общественный деятель, объединяющий людей ради общей цели — свободы, процветания нации и безопасного будущего для наших детей.",
+    founder_contact: "Контакты",
+    hero_survey_btn: "📝 Анкета на оказание помощи репрессированным",
+    
+    card_hrc_title: "Правозащитный центр",
+    card_hrc_sub: "Демократические силы Беларуси",
+    card_hrc_text: "Мы стоим на страже закона там, где его пытаются уничтожить. Наша команда адвокатов работает 24/7, фиксируя нарушения и добиваясь справедливости в международных инстанциях. Мы не просто защищаем — мы возвращаем людям веру в то, что правда обязательно победит.",
+    card_hrc_btn: "Перейти на сайт",
+    
+    card_honest_title: "Фонд Честный политзек",
+    card_honest_text: "Каждый рубль, пожертвованный в фонд, превращается в реальную помощь: оплату адвокатов, покупку лекарств, поддержку детей заключенных. Прозрачность и честность — наши принципы. Мы отчитываемся за каждую копейку, ведь доверие — наша главная валюта.",
+    card_honest_btn: "Перейти на сайт",
+
+    card_urgent_title: "Срочная помощь",
+    card_urgent_text: "Беда приходит внезапно, и важно знать, что вы не одни. Если вас уволили, оштрафовали или вам грозит опасность — мы рядом. Наша программа экстренной поддержки создана, чтобы подставить плечо в самую трудную минуту. Не бойтесь просить о помощи — это проявление силы.",
+    card_urgent_btn: "Анкета",
+
+    card3_title: "Криптовалюта CHUDO",
+    card3_text: "Это не просто цифровой актив, это символ нашей независимости. В мире, где счета блокируются по щелчку пальцев, CHUDO остается неприступной крепостью. Мы строим параллельную экономику свободы, где каждый транш — это акт солидарности, а каждый кошелек — личный банк, неподвластный диктатуре.",
+    support_button: "Поддержать сейчас",
+    footer_title1: "Комитет Солидарности",
+    footer_address: "Адрес:",
+    footer_title3: "Соцсети",
+    
+    seo_text: `
+      <h1>Комитет Солидарности и Фонд "Честный политзек": Миссия Спасения</h1>
+      <p>В эпоху тотальных репрессий, когда государственная машина пытается стереть в порошок любую форму инакомыслия, солидарность становится единственным оружием, которое невозможно отобрать. <strong>Комитет Солидарности Репрессированных</strong> и <strong>Фонд "Честный политзек"</strong> — это не просто организации, это щит и меч гражданского общества, созданные для защиты тех, кто пожертвовал своей свободой ради нашего общего будущего.</p>
+
+      <h2>Фонд "Честный политзек": Больше, чем просто помощь</h2>
+      <p>Фонд был создан как ответ на беспрецедентный уровень насилия и беззакония. Наша философия проста и непоколебима: <em>"Ни один герой не должен остаться один на один с системой"</em>. Мы понимаем, что тюрьма — это испытание не только для узника, но и катастрофа для его семьи. Поэтому наша работа носит комплексный характер.</p>
+      
+      <h3>Как работает наша поддержка?</h3>
+      <ul>
+        <li><strong>Прямая финансовая помощь:</strong> Мы закрываем сборы на оплату штрафов, услуг адвокатов и передач в СИЗО и колонии. Мы работаем напрямую с семьями, минуя бюрократические преграды.</li>
+        <li><strong>Технологии против диктатуры:</strong> Использование криптовалют (включая собственный токен <strong>CHUDO</strong> и USDT) позволяет нам доставлять помощь даже в условиях блокировки банковских счетов и тотального финансового контроля со стороны спецслужб.</li>
+        <li><strong>Медицинская реабилитация:</strong> Тюрьма ломает здоровье, но не дух. Мы оплачиваем обследования, лечение и санаторный отдых для бывших политзаключенных, помогая им вернуться к полноценной жизни.</li>
+        <li><strong>Забота о детях:</strong> Репрессии бьют по самым беззащитным. Фонд организует программы поддержки для детей политзаключенных: от сбора в школу до новогодних подарков и психологической помощи.</li>
+      </ul>
+
+      <h2>Принципы Прозрачности и Доверия</h2>
+      <p>В мире благотворительности доверие — это самый ценный ресурс. "Честный политзек" оправдывает свое название на 100%. Мы внедрили систему строгой отчетности:</p>
+      <ul>
+        <li>Публикация регулярных отчетов о поступлениях и тратах (с соблюдением мер безопасности для получателей в Беларуси).</li>
+        <li>Использование блокчейн-технологий для фиксации транзакций, что делает невозможным хищение или нецелевое использование средств.</li>
+        <li>Прямая коммуникация с донорами и диаспорами.</li>
+      </ul>
+
+      <h2>Наша Глобальная Миссия</h2>
+      <p>Комитет Солидарности не ограничивается только материальной помощью. Мы ведем информационную войну за правду. Наши юристы и правозащитники собирают досье на каждого пособника режима, чтобы в будущем никто не ушел от ответственности. Мы работаем с международными судами, правительствами стран ЕС и США, добиваясь новых пакетов санкций против диктатуры и программ поддержки для демократической Беларуси.</p>
+
+      <p><strong>Помните:</strong> Каждая ваша транзакция, каждый репост, каждое слово поддержки — это кирпичик в стену, которая оградит наших героев от беды. Вместе мы — сила, которую невозможно сломить. Жыве Беларусь!</p>
+    `
+  },
+  be: {
+    meta_title: "Камітэт Салідарнасці | Фонд Сумленны Палітвязень",
+    meta_desc: "Афіцыйны сайт Камітэта салідарнасці і Фонду Сумленны палітвязень. Дапамога, праваабарона, крыптавалюта CHUDO.",
+    marquee: "КАМІТЭТ САЛІДАРНАСЦІ РЭПРЭСАВАНЫХ • АБАРОНА ПРАВОЎ • СВАБОДА • БЯСПЕКА І СПРАВЯДЛІВАСЦЬ • ",
+    founder1_name: "Імя Прозвішча 1",
+    founder1_bio: "Чалавек слова і гонару. Лідэр, чыя воля да свабоды стала прыкладам для тысяч. Прайшоў праз выпрабаванні, каб сёння будаваць новую Беларусь, дзе кожны голас мае значэнне.",
+    founder2_name: "Імя Прозвішча 2",
+    founder2_bio: "Нязломны змагар за справядлівасць. Юрыст і праваабаронца, які прысвяціў жыццё абароне невінаватых і барацьбе з беззаконнем, нягледзячы на ціск і пагрозы.",
+    founder3_name: "Імя Прозвішча 3",
+    founder3_bio: "Голас праўды ў цёмныя часы. Грамадскі дзеяч, які аб'ядноўвае людзей дзеля агульнай мэты — свабоды, росквіту нацыі і бяспечнай будучыні для нашых дзяцей.",
+    founder_contact: "Кантакты",
+    hero_survey_btn: "📝 Анкета на аказанне дапамогі рэпрэсаваным",
+    
+    card_hrc_title: "Праваабарончы цэнтр",
+    card_hrc_sub: "Дэмакратычныя сілы Беларусі",
+    card_hrc_text: "Мы стаім на варце закона там, дзе яго спрабуюць знішчыць. Наша каманда адвакатаў працуе 24/7, фіксуючы парушэнні і дамагаючыся справядлівасці ў міжнародных інстанцыях. Мы не проста абараняем — мы вяртаем людзям веру ў тое, што праўда абавязкова пераможа.",
+    card_hrc_btn: "Перайсці на сайт",
+
+    card_honest_title: "Фонд Сумленны палітвязень",
+    card_honest_text: "Кожны рубель, ахвяраваны ў фонд, ператвараецца ў рэальную дапамогу: аплату адвакатаў, куплю лекаў, падтрымку дзяцей зняволеных. Празрыстасць і сумленнасць — нашы прынцыпы. Мы даем справаздачу за кожную капейку, бо давер — наша галоўная валюта.",
+    card_honest_btn: "Перайсці на сайт",
+
+    card_urgent_title: "Тэрміновая дапамога",
+    card_urgent_text: "Бяда прыходзіць раптоўна, і важна ведаць, што вы не адны. Калі вас звольнілі, аштрафавалі ці вам пагражае небяспека — мы побач. Наша праграма экстранай падтрымкі створана, каб падставіць плячо ў самую цяжкую хвіліну. Не бойцеся прасіць аб дапамозе — гэта праява сілы.",
+    card_urgent_btn: "Анкета",
+
+    card3_title: "Крыптавалюта CHUDO",
+    card3_text: "Гэта не проста лічбавы актыў, гэта сімвал нашай незалежнасці. У свеце, дзе рахункі блакуюцца па пстрычцы пальцаў, CHUDO застаецца непрыступнай крэпасцю. Мы будуем паралельную эканоміку свабоды, дзе кожны кашалёк — асабісты банк, непадуладны дыктатуры.",
+    support_button: "Падтрымаць зараз",
+    footer_title1: "Камітэт Салідарнасці",
+    footer_address: "Адрас:",
+    footer_title3: "Сацсеткі",
+
+    seo_text: `
+      <h1>Камітэт Салідарнасці і Фонд "Сумленны палітвязень": Місія Выратавання</h1>
+      <p>У эпоху татальных рэпрэсій, калі дзяржаўная машына спрабуе сцерці ў парашок любую форму іншадумства, салідарнасць становіцца адзінай зброяй, якую немагчыма адабраць. <strong>Камітэт Салідарнасці Рэпрэсаваных</strong> і <strong>Фонд "Сумленны палітвязень"</strong> — гэта не проста арганізацыі, гэта шчыт і меч грамадзянскай супольнасці, створаныя для абароны тых, хто ахвяраваў сваёй свабодай дзеля нашай агульнай будучыні.</p>
+
+      <h2>Фонд "Сумленны палітвязень": Больш, чым проста дапамога</h2>
+      <p>Фонд быў створаны як адказ на беспрэцэдэнтны ўзровень гвалту і беззаконня. Наша філасофія простая і непахісная: <em>"Ніводзін герой не павінен застацца сам-насам з сістэмай"</em>. Мы разумеем, што турма — гэта выпрабаванне не толькі для вязня, але і катастрофа для яго сям'і. Таму наша праца носіць комплексны характар.</p>
+      
+      <h3>Як працуе наша падтрымка?</h3>
+      <ul>
+        <li><strong>Прамая фінансавая дапамога:</strong> Мы закрываем зборы на аплату штрафаў, паслуг адвакатаў і перадач у СІЗА і калоніі. Мы працуем напрамую з сем'ямі, абмінаючы бюракратычныя перашкоды.</li>
+        <li><strong>Тэхналогіі супраць дыктатуры:</strong> Выкарыстанне крыптавалют (уключаючы ўласны токен <strong>CHUDO</strong> і USDT) дазваляе нам дастаўляць дапамогу нават ва ўмовах блакіроўкі банкаўскіх рахункаў і татальнага фінансавага кантролю з боку спецслужбаў.</li>
+        <li><strong>Медыцынская рэабілітацыя:</strong> Турма ломіць здароўе, але не дух. Мы аплачваем абследаванні, лячэнне і санаторны адпачынак для былых палітвязняў, дапамагаючы ім вярнуцца да паўнавартаснага жыцця.</li>
+        <li><strong>Клопат пра дзяцей:</strong> Рэпрэсіі б'юць па самых безабаронных. Фонд арганізуе праграмы падтрымкі для дзяцей палітвязняў: ад збору ў школу да навагодніх падарункаў і псіхалагічнай дапамогі.</li>
+      </ul>
+
+      <h2>Прынцыпы Празрыстасці і Даверу</h2>
+      <p>У свеце дабрачыннасці давер — гэта самы каштоўны рэсурс. "Сумленны палітвязень" апраўдвае сваю назву на 100%. Мы ўкаранілі сістэму строгай справаздачнасці:</p>
+      <ul>
+        <li>Публікацыя рэгулярных справаздач аб паступленнях і выдатках (з захаваннем мер бяспекі для атрымальнікаў у Беларусі).</li>
+        <li>Выкарыстанне блокчэйн-тэхналогій для фіксацыі транзакцый, што робіць немагчымым крадзеж або нямэтавае выкарыстанне сродкаў.</li>
+        <li>Прамая камунікацыя з донарамі і дыяспарамі.</li>
+      </ul>
+
+      <h2>Наша Глабальная Місія</h2>
+      <p>Камітэт Салідарнасці не абмяжоўваецца толькі матэрыяльнай дапамогай. Мы вядзем інфармацыйную вайну за праўду. Нашы юрысты і праваабаронцы збіраюць дасье на кожнага памагатага рэжыму, каб у будучыні ніхто не пазбег адказнасці. Мы працуем з міжнароднымі судамі, урадамі краін ЕС і ЗША, дамагаючыся новых пакетаў санкцый супраць дыктатуры і праграм падтрымкі для дэмакратычнай Беларусі.</p>
+
+      <p><strong>Памятайце:</strong> Кожная ваша транзакцыя, кожны рэпост, кожнае слова падтрымкі — гэта цаглінка ў сцяну, якая засцеражэ нашых герояў ад бяды. Разам мы — сіла, якую немагчыма зламаць. Жыве Беларусь!</p>
+    `
+  },
+  en: {
+    meta_title: "Committee of Solidarity | Honest Political Prisoner Fund",
+    meta_desc: "Official site of the Committee of Solidarity and the Honest Political Prisoner Fund. Aid, human rights, CHUDO crypto.",
+    marquee: "COMMITTEE OF SOLIDARITY FOR THE REPRESSED • FREEDOM • JUSTICE • SECURITY • ",
+    founder1_name: "Name Surname 1",
+    founder1_bio: "A man of his word and honor. A leader whose will for freedom has become an example for thousands. He went through trials to build a new Belarus today, where every voice matters.",
+    founder2_name: "Name Surname 2",
+    founder2_bio: "Unbending fighter for justice. A lawyer and human rights defender who dedicated his life to protecting the innocent and fighting lawlessness, regardless of pressure and threats.",
+    founder3_name: "Name Surname 3",
+    founder3_bio: "The voice of truth in dark times. A public figure uniting people for a common goal — freedom, prosperity of the nation, and a safe future for our children.",
+    founder_contact: "Contact",
+    hero_survey_btn: "📝 Questionnaire for assistance to the repressed",
+
+    card_hrc_title: "Human Rights Center",
+    card_hrc_sub: "Democratic Forces of Belarus",
+    card_hrc_text: "We stand guard over the law where they try to destroy it. Our team of lawyers works 24/7, recording violations and seeking justice in international courts. We do not just protect — we restore people's faith that the truth will definitely win.",
+    card_hrc_btn: "Go to website",
+
+    card_honest_title: "Honest Political Prisoner Fund",
+    card_honest_text: "Every dollar donated to the fund turns into real help: paying for lawyers, buying medicines, supporting children of prisoners. Transparency and honesty are our principles. We account for every penny, because trust is our main currency.",
+    card_honest_btn: "Go to website",
+
+    card_urgent_title: "Urgent Assistance",
+    card_urgent_text: "Trouble comes suddenly, and it is important to know that you are not alone. If you were fired, fined, or are in danger — we are here. Our emergency support program is designed to lend a shoulder in the most difficult moment. Do not be afraid to ask for help — it is a sign of strength.",
+    card_urgent_btn: "Questionnaire",
+
+    card3_title: "Cryptocurrency CHUDO",
+    card3_text: "This is not just a digital asset, it is a symbol of our independence. In a world where accounts are blocked at the snap of a finger, CHUDO remains an impregnable fortress. We are building a parallel economy of freedom, where every wallet is a personal bank beyond the control of dictatorship.",
+    support_button: "Support Now",
+    footer_title1: "Solidarity Committee",
+    footer_address: "Address:",
+    footer_title3: "Socials",
+
+    seo_text: `
+      <h1>Committee of Solidarity and "Honest Political Prisoner" Fund: A Mission of Salvation</h1>
+      <p>In an era of total repression, when the state machine tries to grind any form of dissent into dust, solidarity becomes the only weapon that cannot be taken away. <strong>The Committee of Solidarity for the Repressed</strong> and the <strong>"Honest Political Prisoner" Fund</strong> are not just organizations; they are the shield and sword of civil society, created to protect those who sacrificed their freedom for our common future.</p>
+
+      <h2>"Honest Political Prisoner" Fund: More Than Just Help</h2>
+      <p>The Fund was created in response to an unprecedented level of violence and lawlessness. Our philosophy is simple and unshakable: <em>"No hero should be left alone with the system"</em>. We understand that prison is not only a trial for the prisoner but also a catastrophe for their family. Therefore, our work is comprehensive.</p>
+      
+      <h3>How Does Our Support Work?</h3>
+      <ul>
+        <li><strong>Direct Financial Aid:</strong> We cover fundraising for fines, lawyer fees, and parcels to pre-trial detention centers and penal colonies. We work directly with families, bypassing bureaucratic obstacles.</li>
+        <li><strong>Technology Against Dictatorship:</strong> The use of cryptocurrencies (including our own token <strong>CHUDO</strong> and USDT) allows us to deliver aid even under conditions of blocked bank accounts and total financial control by special services.</li>
+        <li><strong>Medical Rehabilitation:</strong> Prison breaks health, but not the spirit. We pay for examinations, treatment, and sanatorium rest for former political prisoners, helping them return to a full life.</li>
+        <li><strong>Care for Children:</strong> Repressions hit the most defenseless. The Fund organizes support programs for the children of political prisoners: from getting ready for school to New Year's gifts and psychological help.</li>
+      </ul>
+
+      <h2>Principles of Transparency and Trust</h2>
+      <p>In the world of charity, trust is the most valuable resource. "Honest Political Prisoner" lives up to its name 100%. We have implemented a strict reporting system:</p>
+      <ul>
+        <li>Publication of regular reports on income and expenses (while observing security measures for recipients in Belarus).</li>
+        <li>Use of blockchain technologies to record transactions, making theft or misuse of funds impossible.</li>
+        <li>Direct communication with donors and diasporas.</li>
+      </ul>
+
+      <h2>Our Global Mission</h2>
+      <p>The Solidarity Committee is not limited to material aid alone. We are waging an information war for the truth. Our lawyers and human rights defenders are collecting dossiers on every accomplice of the regime so that in the future no one escapes responsibility. We work with international courts, the governments of the EU and the USA, seeking new sanctions packages against the dictatorship and support programs for a democratic Belarus.</p>
+
+      <p><strong>Remember:</strong> Every transaction, every repost, every word of support is a brick in the wall that will protect our heroes from trouble. Together we are a force that cannot be broken. Long live Belarus!</p>
+    `
+  },
+  pl: {
+    meta_title: "Komitet Solidarności | Fundusz Uczciwy Więzień Polityczny",
+    meta_desc: "Oficjalna strona Komitetu Solidarności i Funduszu Uczciwy Więzień Polityczny. Pomoc, prawa człowieka, kryptowaluta CHUDO.",
+    marquee: "KOMITET SOLIDARNOŚCI REPRESJONOWANYCH • OCHRONA PRAW • WOLNOŚĆ • BEZPIECZEŃSTWO I SPRAWIEDLIWOŚĆ • ",
+    founder1_name: "Imię Nazwisko 1",
+    founder1_bio: "Człowiek słowa i honoru. Lider, którego wola wolności stała się przykładem dla tysięcy. Przeszedł przez próby, by dziś budować nową Białoruś, gdzie każdy głos ma znaczenie.",
+    founder2_name: "Imię Nazwisko 2",
+    founder2_bio: "Niezłomny bojownik o sprawiedliwość. Prawnik i obrońca praw człowieka, który poświęcił życie ochronie niewinnych i walce z bezprawiem, mimo presji i gróźb.",
+    founder3_name: "Imię Nazwisko 3",
+    founder3_bio: "Głos prawdy w mrocznych czasach. Działacz społeczny jednoczący ludzi dla wspólnego celu — wolności, dobrobytu narodu i bezpiecznej przyszłości dla naszych dzieci.",
+    founder_contact: "Kontakt",
+    hero_survey_btn: "📝 Ankieta dotycząca pomocy represjonowanym",
+
+    card_hrc_title: "Centrum Obrony Praw Człowieka",
+    card_hrc_sub: "Demokratyczne Siły Białorusi",
+    card_hrc_text: "Stoimy na straży prawa tam, gdzie próbuje się je zniszczyć. Nasz zespół prawników pracuje 24/7, rejestrując naruszenia i dochodząc sprawiedliwości w instancjach międzynarodowych. Nie tylko bronimy — przywracamy ludziom wiarę w to, że prawda na pewno zwycięży.",
+    card_hrc_btn: "Przejdź na stronę",
+
+    card_honest_title: "Fundusz Uczciwy Więzień Polityczny",
+    card_honest_text: "Każda złotówka przekazana na fundusz zamienia się w realną pomoc: opłacenie prawników, zakup leków, wsparcie dzieci więźniów. Przejrzystość i uczciwość to nasze zasady. Rozliczamy się z każdego grosza, bo zaufanie to nasza główna waluta.",
+    card_honest_btn: "Przejdź na stronę",
+
+    card_urgent_title: "Pilna Pomoc",
+    card_urgent_text: "Nieszczęście przychodzi nagle i ważne jest, by wiedzieć, że nie jesteś sam. Jeśli zostałeś zwolniony, ukarany grzywną lub grozi ci niebezpieczeństwo — jesteśmy blisko. Nasz program wsparcia awaryjnego został stworzony, aby podać ramię w najtrudniejszej chwili. Nie bój się prosić o pomoc — to oznaka siły.",
+    card_urgent_btn: "Ankieta",
+
+    card3_title: "Kryptowaluta CHUDO",
+    card3_text: "To nie tylko cyfrowe aktywo, to symbol naszej niezależności. W świecie, gdzie konta są blokowane na pstryknięcie palcem, CHUDO pozostaje niezdobytą twierdzą. Budujemy równoległą gospodarkę wolności, gdzie każdy portfel to osobisty bank, niezależny od dyktatury.",
+    support_button: "Wesprzyj teraz",
+    footer_title1: "Komitet Solidarności",
+    footer_address: "Adres:",
+    footer_title3: "Media społecznościowe",
+
+    seo_text: `
+      <h1>Komitet Solidarności i Fundusz "Uczciwy Więzień Polityczny": Misja Ratunkowa</h1>
+      <p>W dobie totalnych represji, gdy machina państwowa próbuje zmiażdżyć wszelkie przejawy sprzeciwu, solidarność staje się jedyną bronią, której nie można odebrać. <strong>Komitet Solidarności Represjonowanych</strong> i <strong>Fundusz "Uczciwy Więzień Polityczny"</strong> to nie tylko organizacje; to tarcza i miecz społeczeństwa obywatelskiego, stworzone w celu ochrony tych, którzy poświęcili swoją wolność dla naszej wspólnej przyszłości.</p>
+
+      <h2>Fundusz "Uczciwy Więzień Polityczny": Więcej niż tylko pomoc</h2>
+      <p>Fundusz powstał jako odpowiedź na bezprecedensowy poziom przemocy i bezprawia. Nasza filozofia jest prosta i niezachwiana: <em>"Żaden bohater nie powinien zostać sam na sam z systemem"</em>. Rozumiemy, że więzienie to nie tylko próba dla więźnia, ale także katastrofa dla jego rodziny. Dlatego nasza praca ma charakter kompleksowy.</p>
+      
+      <h3>Jak działa nasze wsparcie?</h3>
+      <ul>
+        <li><strong>Bezpośrednia pomoc finansowa:</strong> Pokrywamy zbiórki na opłacenie grzywien, usług prawniczych oraz paczek do aresztów śledczych i kolonii karnych. Działamy bezpośrednio z rodzinami, omijając biurokratyczne przeszkody.</li>
+        <li><strong>Technologie przeciwko dyktaturze:</strong> Wykorzystanie kryptowalut (w tym własnego tokena <strong>CHUDO</strong> i USDT) pozwala nam dostarczać pomoc nawet w warunkach blokady kont bankowych i całkowitej kontroli finansowej ze strony służb specjalnych.</li>
+        <li><strong>Rehabilitacja medyczna:</strong> Więzienie łamie zdrowie, ale nie ducha. Opłacamy badania, leczenie i pobyty sanatoryjne dla byłych więźniów politycznych, pomagając im wrócić do pełni życia.</li>
+        <li><strong>Troska o dzieci:</strong> Represje uderzają w najbardziej bezbronnych. Fundusz organizuje programy wsparcia dla dzieci więźniów politycznych: od wyprawki szkolnej po prezenty noworoczne i pomoc psychologiczną.</li>
+      </ul>
+
+      <h2>Zasady Przejrzystości i Zaufania</h2>
+      <p>W świecie dobroczynności zaufanie to najcenniejszy zasób. "Uczciwy Więzień Polityczny" w 100% uzasadnia swoją nazwę. Wdrożyliśmy system ścisłej sprawozdawczości:</p>
+      <ul>
+        <li>Publikacja regularnych raportów o wpływach i wydatkach (z zachowaniem środków bezpieczeństwa dla odbiorców na Białorusi).</li>
+        <li>Wykorzystanie technologii blockchain do rejestrowania transakcji, co uniemożliwia kradzież lub niewłaściwe wykorzystanie środków.</li>
+        <li>Bezpośrednia komunikacja z darczyńcami i diasporami.</li>
+      </ul>
+
+      <h2>Nasza Globalna Misja</h2>
+      <p>Komitet Solidarności nie ogranicza się tylko do pomocy materialnej. Prowadzimy wojnę informacyjną o prawdę. Nasi prawnicy i obrońcy praw człowieka zbierają dossier na każdego poplecznika reżimu, aby w przyszłości nikt nie uniknął odpowiedzialności. Współpracujemy z sądami międzynarodowymi, rządami krajów UE i USA, dążąc do nowych pakietów sankcji przeciwko dyktaturze i programów wsparcia dla demokratycznej Białorusi.</p>
+
+      <p><strong>Pamiętaj:</strong> Każda twoja transakcja, każde udostępnienie, każde słowo wsparcia to cegiełka w murze, który ochroni naszych bohaterów przed nieszczęściem. Razem jesteśmy siłą, której nie można złamać. Żywie Białoruś!</p>
+    `
+  }
+};
+
+function applyLang(lang) {
+  document.documentElement.lang = lang;
+  
+  // URL Update
+  const url = new URL(window.location);
+  url.searchParams.set('lang', lang);
+  window.history.pushState({}, '', url);
+
+  if(translations[lang]) {
+      if(translations[lang].meta_title) document.title = translations[lang].meta_title;
+      if(translations[lang].meta_desc) {
+          const metaDesc = document.querySelector('meta[name="description"]');
+          if(metaDesc) metaDesc.setAttribute('content', translations[lang].meta_desc);
+      }
+      if(translations[lang].hero_name) {
+          const photo = document.querySelector('.photo-card-bg');
+          if(photo) photo.alt = translations[lang].hero_name;
+      }
+  }
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      if (translations[lang][key].includes('<')) {
+        el.innerHTML = translations[lang][key];
+      } else {
+        el.textContent = translations[lang][key];
+      }
+    }
+  });
+}
+
+document.querySelectorAll('.flag-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    const lang = item.getAttribute('data-lang');
+    applyLang(lang);
+    const globeFlags = document.getElementById('globeFlags');
+    if(globeFlags) globeFlags.classList.remove('show');
+  });
+});
+
+const globeBtn = document.getElementById('globeBtn');
+const globeFlags = document.getElementById('globeFlags');
+if (globeBtn && globeFlags) {
+  globeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    globeFlags.classList.toggle('show');
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.lang-globe')) {
+      globeFlags.classList.remove('show');
+    }
+  });
+}
+
+const themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') !== 'light';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('themeIcon').textContent = isDark ? '🌙' : '☀️';
+  });
+}
+
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.dataset.target;
+    const textElement = document.getElementById(id);
+    if(textElement) {
+      navigator.clipboard.writeText(textElement.textContent).then(() => {
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.style.background = '#22c55e';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+        }, 1200);
+      });
+    }
+  });
+});
+
+// Cursor trail effect
+const trail = document.getElementById('trail');
+let mouseX = 0, mouseY = 0;
+let trailX = 0, trailY = 0;
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+function animateTrail() {
+    trailX += (mouseX - trailX) * 0.1;
+    trailY += (mouseY - trailY) * 0.1;
+    if(trail) {
+        trail.style.left = trailX + 'px';
+        trail.style.top = trailY + 'px';
+    }
+    requestAnimationFrame(animateTrail);
+}
+animateTrail();
+</script>
+</body>
+</html>
