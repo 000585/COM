@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <title>Фонд ЧЕСТНЫЙ ПОЛИТЗЕК | Комитет Солидарности Репрессированных</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="Официальный сайт Фонда 'Честный политзек' и Комитета Солидарности. Помощь репрессированным, юридическая защита, криптовалюта CHUDO."/>
+<meta name="description" content="Официальный сайт Фонда 'Честный политзек' и Комитета Солидарности. Денис Собко, Юрий Чудинович, Иван. Помощь репрессированным."/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❤️</text></svg>"/>
 <style>
@@ -18,10 +18,31 @@ a{text-decoration:none;color:inherit}
 .holo-text{background:linear-gradient(90deg,#00f260,#0575e6,#f200cb,#00f260);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:holo 3s linear infinite;position:relative;overflow:hidden}
 .hero{width:100%;height:45vh;min-height:220px;max-height:420px;position:relative;overflow:hidden;opacity:0;transform:translateY(-10px);animation:heroFadeIn .9s ease-out forwards;border:2px solid #000;background:#000;z-index:1}
 @keyframes heroFadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-.hero-stripes{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,#fff 0%,#fff 33.33%,#ff0000 33.33%,#ff0000 66.66%,#fff 66.66%,#fff 100%);transform:rotateX(5deg);transform-origin:center bottom;animation:stripes3D 6s infinite ease-in-out;pointer-events:none}
+.hero-stripes{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom,#fff 0%,#fff 33.33%,#ff0000 33.33%,#ff0000 66.66%,#fff 66.66%,#fff 100%);transform:rotateX(5deg);transform-origin:center bottom;animation:stripes3D 6s infinite ease-in-out;pointer-events:none; z-index: 1;}
 @keyframes stripes3D{0%,100%{transform:rotateX(5deg) rotateY(0)}25%{transform:rotateX(5deg) rotateY(2deg)}50%{transform:rotateX(5deg) rotateY(0)}75%{transform:rotateX(5deg) rotateY(-2deg)}}
 .hero-top-text{position:absolute;top:20%;left:50%;transform:translateX(-50%);width: 90%; max-width: 1000px; pointer-events:none;z-index:5; display: flex; justify-content: center; align-items: center;}
 .hero-top-wrapper { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; pointer-events: auto; }
+
+/* Styles for hero image */
+.hero-side-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+@media (max-width: 768px) {
+    .hero-side-img {
+        width: 100%;
+        opacity: 0.2;
+        z-index: 0;
+    }
+}
 
 .survey-brand-btn { 
     background: var(--accent); 
@@ -54,6 +75,21 @@ a{text-decoration:none;color:inherit}
 @keyframes marquee{0%{transform:translate(0,0)}100%{transform:translate(-100%,0)}}
 @keyframes holoShift{0%{background-position:0%}100%{background-position:200%}}
 .noise-bg{position:absolute;top:0;left:0;width:100%;height:100%;background-image:repeating-radial-gradient(#000 0 0.0001%,#fff 0 0.0002%);opacity:0.04;pointer-events:none;z-index:0}
+
+/* FIXED: Added styles for the cursor trail */
+.hero-cursor-trail {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
+    z-index: 10;
+    mix-blend-mode: overlay;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s;
+}
+
 .coin-container{width:90px;height:90px;margin:0 auto 15px auto;perspective:1000px}
 .coin{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:spinCoin 4s linear infinite;will-change:transform}
 .coin-face{position:absolute;width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#713f12;background:radial-gradient(circle at 30% 30%,#fcd34d,#f59e0b);border:3px solid #b45309;box-shadow:0 0 15px rgba(251,191,36,.5);backface-visibility:hidden}
@@ -62,6 +98,8 @@ a{text-decoration:none;color:inherit}
 @keyframes spinCoin{0%{transform:rotateY(0deg)}100%{transform:rotateY(360deg)}}
 .spin-fast { animation-duration: 3s !important; }
 .spin-medium { animation-duration: 5s !important; }
+.coin-emoji { font-size: 2.5rem; }
+
 .tilt-card{transition:transform .3s ease;transform-style:preserve-3d}
 .tilt-card:hover{transform:perspective(1000px) rotateX(var(--ry,0)) rotateY(var(--rx,0)) scale(1.02)}
 .lang-bar{background:var(--bg-alt);position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
@@ -95,13 +133,16 @@ a{text-decoration:none;color:inherit}
     margin-top: auto; 
 }
 
-.info-card h3{margin:0 0 1rem;color:var(--fg);border-bottom:2px solid var(--accent);padding-bottom:.5rem; text-align: start;}
+.info-card h3{margin:0 0 0.5rem;color:var(--fg);border-bottom:2px solid var(--accent);padding-bottom:.5rem; text-align: start;}
 .info-card p{color:var(--muted);font-size:.95rem; text-align: start; flex-grow: 1;}
 .photo-card{padding:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:500px;border:none;position:relative}
 .photo-card-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+video.photo-card-bg { object-fit: cover; } 
+
 .photo-card-content{position:relative;z-index:10;background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,0) 100%);padding:2rem;color:#fff;text-align:center}
 .photo-card h3 { text-align: center; }
-.photo-card p { text-align: center; color: #ccc; font-size: 0.9rem; margin-top: 5px; }
+.photo-card p { text-align: center; color: #ccc; font-size: 0.9rem; margin-top: 5px; margin-bottom: 10px; }
+.card-motto { font-style: italic; opacity: 0.8; font-size: 0.85rem !important; display: block; margin-top: 5px; }
 
 .btn-primary{display:block;text-align:center;padding:.85rem;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;margin-top:1rem;transition:.3s;position:relative;z-index:20;border:none}
 .btn-primary:hover{transform:scale(1.02);background:#1e40af}
@@ -138,6 +179,7 @@ a{text-decoration:none;color:inherit}
 <body>
 <div class="hero">
   <div class="noise-bg"></div><div class="hero-stripes"></div>
+  <img src="photo_2026-01-16_07-36-22 .webp" alt="Hero Left Image" class="hero-side-img">
   <div class="hero-top-text">
     <div class="hero-top-wrapper">
         <a href="https://www.youtube.com/channel/UCTXAwovvaec4w9ztbggWMEQ" target="_blank" rel="noopener noreferrer" class="yt-brand-btn">
@@ -172,28 +214,49 @@ a{text-decoration:none;color:inherit}
   <section class="card-scroll" id="main">
     
     <article class="info-card tilt-card photo-card">
-      <img src="founder1.jpg" alt="Учредитель 1" class="photo-card-bg" loading="lazy" decoding="async" width="380" height="500">
+      <video src="video-2026-01-17-00-17-19_Vua5i0zz.mp4" class="photo-card-bg" autoplay loop muted playsinline loading="lazy"></video>
       <div class="photo-card-content">
-        <h3 class="holo-text" data-i18n="founder1_name">Учредитель 1</h3>
-        <p data-i18n="founder1_bio">Человек слова и чести. Лидер, чья воля к свободе стала примером для тысяч. Прошел через испытания, чтобы сегодня строить новую Беларусь.</p>
+        <h3 class="holo-text" data-i18n="video_card_title">Наши действия</h3>
+        <p data-i18n="video_card_text">Хроника борьбы за свободу.</p>
+        <a href="#" class="btn-primary" data-i18n="more_btn">Подробнее</a>
+      </div>
+    </article>
+
+    <article class="info-card tilt-card photo-card">
+      <img src="photo_2026-01-17_23-37-14.webp" alt="Денис Собко" class="photo-card-bg" loading="lazy" decoding="async" width="380" height="500">
+      <div class="photo-card-content">
+        <h3 class="holo-text" data-i18n="sobko_name">Денис Собко</h3>
+        <p>
+            <span data-i18n="sobko_role">Председатель Комитета</span>
+            <br>
+            <span class="card-motto" data-i18n="sobko_motto">«Солидарность — наше оружие»</span>
+        </p>
         <a href="#" class="btn-primary" data-i18n="founder_contact">Контакты</a>
       </div>
     </article>
 
     <article class="info-card tilt-card photo-card">
-      <img src="founder2.jpg" alt="Учредитель 2" class="photo-card-bg" loading="lazy" decoding="async" width="380" height="500">
+      <img src="photo_2026-01-17_23-15-06 .webp" alt="Юрий Чудинович" class="photo-card-bg" loading="lazy" decoding="async" width="380" height="500">
       <div class="photo-card-content">
-        <h3 class="holo-text" data-i18n="founder2_name">Учредитель 2</h3>
-        <p data-i18n="founder2_bio">Несгибаемый борец за справедливость. Юрист и правозащитник, посвятивший жизнь защите невиновных и борьбе с беззаконием.</p>
+        <h3 class="holo-text" data-i18n="chudzinovich_name">Юрий Чудинович</h3>
+        <p>
+            <span data-i18n="founder_role">Учредитель Комитета</span>
+            <br>
+            <span class="card-motto" data-i18n="chudzinovich_motto">«Свободу политзаключенным!»</span>
+        </p>
         <a href="#" class="btn-primary" data-i18n="founder_contact">Контакты</a>
       </div>
     </article>
 
     <article class="info-card tilt-card photo-card">
-      <img src="founder3.jpg" alt="Учредитель 3" class="photo-card-bg" loading="lazy" decoding="async" width="380" height="500">
+      <img src="photo_2026-01-16_07-36-19 .webp" alt="Иван" class="photo-card-bg" loading="lazy" decoding="async" width="380" height="500">
       <div class="photo-card-content">
-        <h3 class="holo-text" data-i18n="founder3_name">Учредитель 3</h3>
-        <p data-i18n="founder3_bio">Голос правды в темные времена. Общественный деятель, объединяющий людей ради общей цели — свободы и процветания нации.</p>
+        <h3 class="holo-text" data-i18n="ivan_name">Иван</h3>
+        <p>
+            <span data-i18n="founder_role">Учредитель Комитета</span>
+            <br>
+            <span class="card-motto" data-i18n="ivan_motto">«Правда всегда победит»</span>
+        </p>
         <a href="#" class="btn-primary" data-i18n="founder_contact">Контакты</a>
       </div>
     </article>
@@ -207,7 +270,7 @@ a{text-decoration:none;color:inherit}
       </div>
       <h3 class="holo-text" data-i18n="card_hrc_title">Правозащитный центр</h3>
       <p style="font-size: 0.9em; color: var(--accent); margin-top:-10px; margin-bottom: 10px;" data-i18n="card_hrc_sub">Демократические силы Беларуси</p>
-      <p data-i18n="card_hrc_text">Мы стоим на страже закона там, где его пытаются уничтожить. Наша команда адвокатов работает 24/7, фиксируя нарушения и добиваясь справедливости в международных инстанциях. Мы не просто защищаем — мы возвращаем людям веру в то, что правда обязательно победит.</p>
+      <p data-i18n="card_hrc_text">Мы стоим на страже закона там, где его пытаются уничтожить. Наша команда адвокатов работает 24/7.</p>
       <a href="https://000585.github.io/1" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="card_hrc_btn">Перейти на сайт</a>
     </article>
 
@@ -219,7 +282,7 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
       <h3 class="holo-text" data-i18n="card_honest_title">Фонд Честный политзек</h3>
-      <p data-i18n="card_honest_text">Каждый рубль, пожертвованный в фонд, превращается в реальную помощь: оплату адвокатов, покупку лекарств, поддержку детей заключенных. Прозрачность и честность — наши принципы. Мы отчитываемся за каждую копейку, ведь доверие — наша главная валюта.</p>
+      <p data-i18n="card_honest_text">Каждый рубль превращается в реальную помощь: оплату адвокатов, покупку лекарств, поддержку детей.</p>
       <a href="https://6900903-ai.github.io/6900903-ai/" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="card_honest_btn">Перейти на сайт</a>
     </article>
 
@@ -231,7 +294,7 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
       <h3 class="holo-text" data-i18n="card_urgent_title">Срочная помощь</h3>
-      <p data-i18n="card_urgent_text">Беда приходит внезапно, и важно знать, что вы не одни. Если вас уволили, оштрафовали или вам грозит опасность — мы рядом. Наша программа экстренной поддержки создана, чтобы подставить плечо в самую трудную минуту. Не бойтесь просить о помощи — это проявление силы.</p>
+      <p data-i18n="card_urgent_text">Беда приходит внезапно. Если вас уволили или вам грозит опасность — мы рядом.</p>
       <a href="https://6900903-ai.github.io/com/" target="_blank" rel="noopener noreferrer" class="btn-primary" data-i18n="card_urgent_btn">Анкета</a>
     </article>
 
@@ -243,13 +306,61 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
       <h3 class="holo-text" data-i18n="card3_title">Криптовалюта CHUDO</h3>
-      <p data-i18n="card3_text">Это не просто цифровой актив, это символ нашей независимости. В мире, где счета блокируются по щелчку пальцев, CHUDO остается неприступной крепостью. Мы строим параллельную экономику свободы, где каждый транш — это акт солидарности, а каждый кошелек — личный банк, неподвластный диктатуре.</p>
+      <p data-i18n="card3_text">Символ нашей независимости. В мире, где счета блокируются по щелчку пальцев, CHUDO остается неприступной крепостью.</p>
     </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin spin-medium">
+          <div class="coin-face front coin-emoji">📂</div>
+          <div class="coin-face back coin-emoji">📂</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card_archive_title">Архив репрессий</h3>
+      <p data-i18n="card_archive_text">Мы документируем каждое преступление режима. Никто не будет забыт, ничто не будет прощено.</p>
+      <a href="#" class="btn-primary" data-i18n="card_archive_btn">Открыть архив</a>
+    </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin spin-medium">
+          <div class="coin-face front coin-emoji">🤝</div>
+          <div class="coin-face back coin-emoji">🤝</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card_volunteer_title">Стать волонтером</h3>
+      <p data-i18n="card_volunteer_text">Присоединяйтесь к нашей команде. Ваше время и навыки могут спасти чью-то жизнь.</p>
+      <a href="#" class="btn-primary" data-i18n="card_volunteer_btn">Присоединиться</a>
+    </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin spin-medium">
+          <div class="coin-face front coin-emoji">🧠</div>
+          <div class="coin-face back coin-emoji">🧠</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card_psy_title">Психологическая помощь</h3>
+      <p data-i18n="card_psy_text">Бесплатная поддержка для бывших политзаключенных и их семей. Исцеляем травмы вместе.</p>
+      <a href="#" class="btn-primary" data-i18n="card_psy_btn">Получить помощь</a>
+    </article>
+
+    <article class="info-card tilt-card">
+      <div class="coin-container">
+        <div class="coin spin-fast">
+          <div class="coin-face front coin-emoji">🧸</div>
+          <div class="coin-face back coin-emoji">🧸</div>
+        </div>
+      </div>
+      <h3 class="holo-text" data-i18n="card_rehab_title">Реабилитация семей</h3>
+      <p data-i18n="card_rehab_text">Программы восстановления для детей репрессированных. Летние лагеря, обучение и забота.</p>
+      <a href="#" class="btn-primary" data-i18n="card_rehab_btn">Узнать больше</a>
+    </article>
+
   </section>
 
   <section class="seo-article">
-    <div data-i18n="seo_text">
-       </div>
+    <div data-i18n="sobko_full_bio"></div>
   </section>
 
   <section class="payment-section">
@@ -319,250 +430,378 @@ window.addEventListener('load',()=>{
 const translations = {
   ru: {
     meta_title: "Комитет Солидарности | Фонд Честный Политзек",
-    meta_desc: "Официальный сайт Комитета солидарности и Фонда Честный политзек. Помощь, правозащита, криптовалюта CHUDO.",
+    meta_desc: "Официальный сайт Комитета солидарности и Фонда Честный политзек. Денис Собко, Юрий Чудинович, Иван. Помощь репрессированным.",
     marquee: "КОМИТЕТ СОЛИДАРНОСТИ РЕПРЕССИРОВАННЫХ • ЗАЩИТА ПРАВ • СВОБОДА • БЕЗОПАСНОСТЬ И СПРАВЕДЛИВОСТЬ • ",
-    founder1_name: "Имя Фамилия 1",
-    founder1_bio: "Человек слова и чести. Лидер, чья воля к свободе стала примером для тысяч. Прошел через испытания, чтобы сегодня строить новую Беларусь, где каждый голос имеет значение.",
-    founder2_name: "Имя Фамилия 2",
-    founder2_bio: "Несгибаемый борец за справедливость. Юрист и правозащитник, посвятивший жизнь защите невиновных и борьбе с беззаконием, невзирая на давление и угрозы.",
-    founder3_name: "Имя Фамилия 3",
-    founder3_bio: "Голос правды в темные времена. Общественный деятель, объединяющий людей ради общей цели — свободы, процветания нации и безопасного будущего для наших детей.",
-    founder_contact: "Контакты",
-    hero_survey_btn: "📝 Анкета на оказание помощи репрессированным",
     
+    video_card_title: "Наши действия",
+    video_card_text: "Хроника борьбы за свободу.",
+    more_btn: "Подробнее",
+
+    sobko_name: "Денис Собко",
+    sobko_role: "Председатель Комитета",
+    sobko_motto: "«Солидарность — наше оружие»",
+    
+    chudzinovich_name: "Юрий Чудинович",
+    chudzinovich_motto: "«Свободу политзаключенным!»",
+    
+    ivan_name: "Иван",
+    ivan_motto: "«Правда всегда победит»",
+
+    founder_role: "Учредитель Комитета",
+    founder_contact: "Контакты",
+
+    hero_survey_btn: "📝 Анкета на оказание помощи репрессированным",
     card_hrc_title: "Правозащитный центр",
     card_hrc_sub: "Демократические силы Беларуси",
-    card_hrc_text: "Мы стоим на страже закона там, где его пытаются уничтожить. Наша команда адвокатов работает 24/7, фиксируя нарушения и добиваясь справедливости в международных инстанциях. Мы не просто защищаем — мы возвращаем людям веру в то, что правда обязательно победит.",
+    card_hrc_text: "Мы стоим на страже закона там, где его пытаются уничтожить. Наша команда адвокатов работает 24/7.",
     card_hrc_btn: "Перейти на сайт",
     
     card_honest_title: "Фонд Честный политзек",
-    card_honest_text: "Каждый рубль, пожертвованный в фонд, превращается в реальную помощь: оплату адвокатов, покупку лекарств, поддержку детей заключенных. Прозрачность и честность — наши принципы. Мы отчитываемся за каждую копейку, ведь доверие — наша главная валюта.",
+    card_honest_text: "Каждый рубль превращается в реальную помощь: оплату адвокатов, покупку лекарств, поддержку детей.",
     card_honest_btn: "Перейти на сайт",
 
     card_urgent_title: "Срочная помощь",
-    card_urgent_text: "Беда приходит внезапно, и важно знать, что вы не одни. Если вас уволили, оштрафовали или вам грозит опасность — мы рядом. Наша программа экстренной поддержки создана, чтобы подставить плечо в самую трудную минуту. Не бойтесь просить о помощи — это проявление силы.",
+    card_urgent_text: "Беда приходит внезапно. Если вас уволили или вам грозит опасность — мы рядом.",
     card_urgent_btn: "Анкета",
 
     card3_title: "Криптовалюта CHUDO",
-    card3_text: "Это не просто цифровой актив, это символ нашей независимости. В мире, где счета блокируются по щелчку пальцев, CHUDO остается неприступной крепостью. Мы строим параллельную экономику свободы, где каждый транш — это акт солидарности, а каждый кошелек — личный банк, неподвластный диктатуре.",
+    card3_text: "Символ нашей независимости. В мире, где счета блокируются по щелчку пальцев, CHUDO остается неприступной крепостью.",
+    
+    /* NEW CARDS - RU */
+    card_archive_title: "Архив репрессий",
+    card_archive_text: "Мы документируем каждое преступление режима. Никто не будет забыт, ничто не будет прощено.",
+    card_archive_btn: "Открыть архив",
+
+    card_volunteer_title: "Стать волонтером",
+    card_volunteer_text: "Присоединяйтесь к нашей команде. Ваше время и навыки могут спасти чью-то жизнь.",
+    card_volunteer_btn: "Присоединиться",
+
+    card_psy_title: "Психологическая помощь",
+    card_psy_text: "Бесплатная поддержка для бывших политзаключенных и их семей. Исцеляем травмы вместе.",
+    card_psy_btn: "Получить помощь",
+
+    card_rehab_title: "Реабилитация семей",
+    card_rehab_text: "Программы восстановления для детей репрессированных. Летние лагеря, обучение и забота.",
+    card_rehab_btn: "Узнать больше",
+
     support_button: "Поддержать сейчас",
     footer_title1: "Комитет Солидарности",
     footer_address: "Адрес:",
     footer_title3: "Соцсети",
-    
-    seo_text: `
-      <h1>Комитет Солидарности и Фонд "Честный политзек": Миссия Спасения</h1>
-      <p>В эпоху тотальных репрессий, когда государственная машина пытается стереть в порошок любую форму инакомыслия, солидарность становится единственным оружием, которое невозможно отобрать. <strong>Комитет Солидарности Репрессированных</strong> и <strong>Фонд "Честный политзек"</strong> — это не просто организации, это щит и меч гражданского общества, созданные для защиты тех, кто пожертвовал своей свободой ради нашего общего будущего.</p>
 
-      <h2>Фонд "Честный политзек": Больше, чем просто помощь</h2>
-      <p>Фонд был создан как ответ на беспрецедентный уровень насилия и беззакония. Наша философия проста и непоколебима: <em>"Ни один герой не должен остаться один на один с системой"</em>. Мы понимаем, что тюрьма — это испытание не только для узника, но и катастрофа для его семьи. Поэтому наша работа носит комплексный характер.</p>
+    sobko_full_bio: `
+      <h2>КОМИТЕТ СОЛИДАРНОСТИ РЕПРЕССИРОВАННЫХ: МИССИЯ И ЛИДЕРСТВО</h2>
+      <p>В эпоху беспрецедентных репрессий, когда сотни тысяч белорусов оказались заложниками диктаторского режима, возникла острая необходимость в создании структуры, способной не просто оказывать точечную помощь, но и системно отстаивать права пострадавших на международном уровне. Комитет Солидарности Репрессированных (Komitet Solidarności Represjonowanych) стал ответом на этот вызов, объединив вокруг себя людей, готовых действовать решительно и прозрачно.</p>
+
+      <h3>ДЕНИС СОБКО: ПУТЬ ПРЕДСЕДАТЕЛЯ</h3>
+      <p>Во главе Комитета стоит человек, чья биография неразрывно связана как с Беларусью, так и с Польшей, что позволяет ему эффективно наводить мосты между диаспорой и европейскими институтами. Денис Собко (Denis Sobko) — житель Польши, проживающий в деревне Суховольце (Suchowolce 52), гмина Клещеле (Kleszczele), Подляское воеводство.</p>
       
-      <h3>Как работает наша поддержка?</h3>
+      <p>Его профессиональный путь — это история создания рабочих мест и помощи соотечественникам в адаптации за границей. В 2017–2023 годах он успешно вёл индивидуальную предпринимательскую деятельность под брендом <strong>BelPolInwest DENIS SOBKO</strong> (NIP: 5423272978, REGON: 367009086). Основным направлением деятельности его компании стало агентство по трудоустройству (PKD 7810Z), которое специализировалось на подборе квалифицированных работников из Беларуси для польских работодателей. Этот опыт дал ему глубокое понимание проблем, с которыми сталкиваются мигранты: от юридических сложностей легализации до бытовой неустроенности.</p>
+
+      <p>В 2024 году Денис Собко проявил себя и на политическом поприще, баллотировавшись в совет гмины Клещеле от комитета <strong>KWW ROZTROPNA TROSKA O DOBRO GMINY</strong>. В свои 40 лет он продемонстрировал готовность брать на себя ответственность за судьбу местного сообщества, что стало важным этапом в формировании его как общественного лидера.</p>
+
+      <h3>РОЖДЕНИЕ КОМИТЕТА И КАМПАНИЯ ПОМОЩИ</h3>
+      <p>В декабре 2025 года, осознавая масштаб гуманитарной катастрофы, разворачивающейся в Беларуси, Денис Собко выступил инициатором создания Комитета Солидарности Репрессированных. Его первым публичным шагом стал запуск масштабной краудфандинговой кампании на польской платформе zrzutka.pl под лозунгом <em>«Przyłącz się do walki o wolność! Daj szansę Kresom»</em> ("Присоединяйся к борьбе за свободу! Дай шанс Кресам").</p>
+
+      <h3>МИССИЯ И ЦЕННОСТИ</h3>
+      <p>Комитет позиционирует себя не просто как благотворительный фонд, а как инициативу глубокой моральной солидарности с людьми, ставшими жертвами режима Александра Лукашенко. Особый, исторически обоснованный акцент делается на помощи полякам и белорусам с исторических Кресов (восточные земли бывшей Речи Посполитой) — региона, который наиболее сильно пострадал от советизации и современных репрессий.</p>
+
+      <h4>НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ:</h4>
       <ul>
-        <li><strong>Прямая финансовая помощь:</strong> Мы закрываем сборы на оплату штрафов, услуг адвокатов и передач в СИЗО и колонии. Мы работаем напрямую с семьями, минуя бюрократические преграды.</li>
-        <li><strong>Технологии против диктатуры:</strong> Использование криптовалют (включая собственный токен <strong>CHUDO</strong> и USDT) позволяет нам доставлять помощь даже в условиях блокировки банковских счетов и тотального финансового контроля со стороны спецслужб.</li>
-        <li><strong>Медицинская реабилитация:</strong> Тюрьма ломает здоровье, но не дух. Мы оплачиваем обследования, лечение и санаторный отдых для бывших политзаключенных, помогая им вернуться к полноценной жизни.</li>
-        <li><strong>Забота о детях:</strong> Репрессии бьют по самым беззащитным. Фонд организует программы поддержки для детей политзаключенных: от сбора в школу до новогодних подарков и психологической помощи.</li>
+          <li><strong>Экстренная гуманитарная помощь:</strong> Сбор средств на продукты питания, теплую одежду и предметы первой необходимости для семей политзаключенных.</li>
+          <li><strong>Медицинская поддержка:</strong> Закупка и доставка дефицитных лекарств, оплата операций и реабилитации для тех, кто вышел из тюрем с подорванным здоровьем.</li>
+          <li><strong>Релокация и убежище:</strong> Помощь в экстренной эвакуации из Беларуси, предоставление безопасного жилья в Польше (shelter) на первое время.</li>
+          <li><strong>Юридическая защита:</strong> Оплата адвокатов и штрафов.</li>
+          <li><strong>Инновации:</strong> Использование криптовалют (включая собственный токен CHUDO) для обхода банковских блокировок.</li>
       </ul>
 
-      <h2>Принципы Прозрачности и Доверия</h2>
-      <p>В мире благотворительности доверие — это самый ценный ресурс. "Честный политзек" оправдывает свое название на 100%. Мы внедрили систему строгой отчетности:</p>
-      <ul>
-        <li>Публикация регулярных отчетов о поступлениях и тратах (с соблюдением мер безопасности для получателей в Беларуси).</li>
-        <li>Использование блокчейн-технологий для фиксации транзакций, что делает невозможным хищение или нецелевое использование средств.</li>
-        <li>Прямая коммуникация с донорами и диаспорами.</li>
-      </ul>
+      <p>Комитет действует на принципах полной прозрачности и подотчетности. Каждая злотый, доллар или токен направляются непосредственно тем, кто в этом нуждается. Мы верим, что солидарность не имеет границ, а свобода — это высшая ценность, за которую стоит бороться.</p>
 
-      <h2>Наша Глобальная Миссия</h2>
-      <p>Комитет Солидарности не ограничивается только материальной помощью. Мы ведем информационную войну за правду. Наши юристы и правозащитники собирают досье на каждого пособника режима, чтобы в будущем никто не ушел от ответственности. Мы работаем с международными судами, правительствами стран ЕС и США, добиваясь новых пакетов санкций против диктатуры и программ поддержки для демократической Беларуси.</p>
-
-      <p><strong>Помните:</strong> Каждая ваша транзакция, каждый репост, каждое слово поддержки — это кирпичик в стену, которая оградит наших героев от беды. Вместе мы — сила, которую невозможно сломить. Жыве Беларусь!</p>
+      <br>
+      <p><em>Z poważaniem,<br>
+      Komitet Solidarności Represjonowanych i Przedstawiciel Komitetu Denis Sobko</em></p>
     `
   },
   be: {
     meta_title: "Камітэт Салідарнасці | Фонд Сумленны Палітвязень",
-    meta_desc: "Афіцыйны сайт Камітэта салідарнасці і Фонду Сумленны палітвязень. Дапамога, праваабарона, крыптавалюта CHUDO.",
+    meta_desc: "Афіцыйны сайт Камітэта салідарнасці і Фонду Сумленны палітвязень. Дзяніс Сабко, Юрый Чудзіновіч, Іван.",
     marquee: "КАМІТЭТ САЛІДАРНАСЦІ РЭПРЭСАВАНЫХ • АБАРОНА ПРАВОЎ • СВАБОДА • БЯСПЕКА І СПРАВЯДЛІВАСЦЬ • ",
-    founder1_name: "Імя Прозвішча 1",
-    founder1_bio: "Чалавек слова і гонару. Лідэр, чыя воля да свабоды стала прыкладам для тысяч. Прайшоў праз выпрабаванні, каб сёння будаваць новую Беларусь, дзе кожны голас мае значэнне.",
-    founder2_name: "Імя Прозвішча 2",
-    founder2_bio: "Нязломны змагар за справядлівасць. Юрыст і праваабаронца, які прысвяціў жыццё абароне невінаватых і барацьбе з беззаконнем, нягледзячы на ціск і пагрозы.",
-    founder3_name: "Імя Прозвішча 3",
-    founder3_bio: "Голас праўды ў цёмныя часы. Грамадскі дзеяч, які аб'ядноўвае людзей дзеля агульнай мэты — свабоды, росквіту нацыі і бяспечнай будучыні для нашых дзяцей.",
-    founder_contact: "Кантакты",
-    hero_survey_btn: "📝 Анкета на аказанне дапамогі рэпрэсаваным",
     
+    video_card_title: "Нашы дзеянні",
+    video_card_text: "Хроніка барацьбы за свабоду.",
+    more_btn: "Падрабязней",
+
+    sobko_name: "Дзяніс Сабко",
+    sobko_role: "Старшыня Камітэта",
+    sobko_motto: "«Салідарнасць — наша зброя»",
+
+    chudzinovich_name: "Юрый Чудзіновіч",
+    chudzinovich_motto: "«Свабоду палітвязням!»",
+    
+    ivan_name: "Іван",
+    ivan_motto: "«Праўда заўсёды пераможа»",
+
+    founder_role: "Заснавальнік Камітэта",
+    founder_contact: "Кантакты",
+
+    hero_survey_btn: "📝 Анкета на аказанне дапамогі рэпрэсаваным",
     card_hrc_title: "Праваабарончы цэнтр",
     card_hrc_sub: "Дэмакратычныя сілы Беларусі",
-    card_hrc_text: "Мы стаім на варце закона там, дзе яго спрабуюць знішчыць. Наша каманда адвакатаў працуе 24/7, фіксуючы парушэнні і дамагаючыся справядлівасці ў міжнародных інстанцыях. Мы не проста абараняем — мы вяртаем людзям веру ў тое, што праўда абавязкова пераможа.",
+    card_hrc_text: "Мы стаім на варце закона там, дзе яго спрабуюць знішчыць. Наша каманда адвакатаў працуе 24/7.",
     card_hrc_btn: "Перайсці на сайт",
-
+    
     card_honest_title: "Фонд Сумленны палітвязень",
-    card_honest_text: "Кожны рубель, ахвяраваны ў фонд, ператвараецца ў рэальную дапамогу: аплату адвакатаў, куплю лекаў, падтрымку дзяцей зняволеных. Празрыстасць і сумленнасць — нашы прынцыпы. Мы даем справаздачу за кожную капейку, бо давер — наша галоўная валюта.",
+    card_honest_text: "Кожны рубель ператвараецца ў рэальную дапамогу: аплату адвакатаў, куплю лекаў, падтрымку дзяцей.",
     card_honest_btn: "Перайсці на сайт",
 
     card_urgent_title: "Тэрміновая дапамога",
-    card_urgent_text: "Бяда прыходзіць раптоўна, і важна ведаць, што вы не адны. Калі вас звольнілі, аштрафавалі ці вам пагражае небяспека — мы побач. Наша праграма экстранай падтрымкі створана, каб падставіць плячо ў самую цяжкую хвіліну. Не бойцеся прасіць аб дапамозе — гэта праява сілы.",
+    card_urgent_text: "Бяда прыходзіць раптоўна. Мы побач.",
     card_urgent_btn: "Анкета",
 
     card3_title: "Крыптавалюта CHUDO",
-    card3_text: "Гэта не проста лічбавы актыў, гэта сімвал нашай незалежнасці. У свеце, дзе рахункі блакуюцца па пстрычцы пальцаў, CHUDO застаецца непрыступнай крэпасцю. Мы будуем паралельную эканоміку свабоды, дзе кожны кашалёк — асабісты банк, непадуладны дыктатуры.",
+    card3_text: "Сімвал нашай незалежнасці. Мы будуем паралельную эканоміку свабоды.",
+
+    /* NEW CARDS - BE */
+    card_archive_title: "Архіў рэпрэсій",
+    card_archive_text: "Мы дакументуем кожнае злачынства рэжыму. Ніхто не будзе забыты, нішто не будзе прабачана.",
+    card_archive_btn: "Адкрыць архіў",
+
+    card_volunteer_title: "Стаць валанцёрам",
+    card_volunteer_text: "Далучайцеся да нашай каманды. Ваш час і навыкі могуць выратаваць чыёсьці жыццё.",
+    card_volunteer_btn: "Далучыцца",
+
+    card_psy_title: "Псіхалагічная дапамога",
+    card_psy_text: "Бясплатная падтрымка для былых палітвязняў і іх сем'яў. Лечым траўмы разам.",
+    card_psy_btn: "Атрымаць дапамогу",
+
+    card_rehab_title: "Рэабілітацыя сем'яў",
+    card_rehab_text: "Праграмы аднаўлення для дзяцей рэпрэсаваных. Летнія лагеры, навучанне і клопат.",
+    card_rehab_btn: "Даведацца больш",
+    
     support_button: "Падтрымаць зараз",
     footer_title1: "Камітэт Салідарнасці",
     footer_address: "Адрас:",
     footer_title3: "Сацсеткі",
+    
+    sobko_full_bio: `
+      <h2>КАМІТЭТ САЛІДАРНАСЦІ РЭПРЭСАВАНЫХ: МІСІЯ І ЛІДАРСТВА</h2>
+      <p>У эпоху беспрэцэдэнтных рэпрэсій, калі сотні тысяч беларусаў апынуліся закладнікамі дыктатарскага рэжыму, паўстала вострая неабходнасць у стварэнні структуры, здольнай не проста аказваць кропкавую дапамогу, але і сістэмна адстойваць правы пацярпелых на міжнародным узроўні. Камітэт Салідарнасці Рэпрэсаваных (Komitet Solidarności Represjonowanych) стаў адказам на гэты выклік, аб'яднаўшы вакол сябе людзей, гатовых дзейнічаць рашуча і празрыста.</p>
 
-    seo_text: `
-      <h1>Камітэт Салідарнасці і Фонд "Сумленны палітвязень": Місія Выратавання</h1>
-      <p>У эпоху татальных рэпрэсій, калі дзяржаўная машына спрабуе сцерці ў парашок любую форму іншадумства, салідарнасць становіцца адзінай зброяй, якую немагчыма адабраць. <strong>Камітэт Салідарнасці Рэпрэсаваных</strong> і <strong>Фонд "Сумленны палітвязень"</strong> — гэта не проста арганізацыі, гэта шчыт і меч грамадзянскай супольнасці, створаныя для абароны тых, хто ахвяраваў сваёй свабодай дзеля нашай агульнай будучыні.</p>
-
-      <h2>Фонд "Сумленны палітвязень": Больш, чым проста дапамога</h2>
-      <p>Фонд быў створаны як адказ на беспрэцэдэнтны ўзровень гвалту і беззаконня. Наша філасофія простая і непахісная: <em>"Ніводзін герой не павінен застацца сам-насам з сістэмай"</em>. Мы разумеем, што турма — гэта выпрабаванне не толькі для вязня, але і катастрофа для яго сям'і. Таму наша праца носіць комплексны характар.</p>
+      <h3>ДЗЯНІС САБКО: ШЛЯХ СТАРШЫНІ</h3>
+      <p>На чале Камітэта стаіць чалавек, чыя біяграфія непарыўна звязана як з Беларуссю, так і з Польшчай, што дазваляе яму эфектыўна будаваць масты паміж дыяспарай і еўрапейскімі інстытутамі. Дзяніс Сабко (Denis Sobko) — жыхар Польшчы, які пражывае ў вёсцы Сухавольцы (Suchowolce 52), гміна Кляшчэлі (Kleszczele), Падляскае ваяводства.</p>
       
-      <h3>Як працуе наша падтрымка?</h3>
+      <p>Яго прафесійны шлях — гэта гісторыя стварэння працоўных месцаў і дапамогі суайчыннікам у адаптацыі за мяжой. У 2017–2023 гадах ён паспяхова вёў індывідуальную прадпрымальніцкую дзейнасць пад брэндам <strong>BelPolInwest DENIS SOBKO</strong> (NIP: 5423272978, REGON: 367009086). Асноўным напрамкам дзейнасці яго кампаніі стала агенцтва па працаўладкаванні (PKD 7810Z), якое спецыялізавалася на падборы кваліфікаваных работнікаў з Беларусі для польскіх працадаўцаў. Гэты вопыт даў яму глыбокае разуменне праблем, з якімі сутыкаюцца мігранты: ад юрыдычных складанасцяў легалізацыі да бытавой неўладкаванасці.</p>
+
+      <p>У 2024 годзе Дзяніс Сабко праявіў сябе і на палітычнай ніве, балатаваўшыся ў савет гміны Кляшчэлі ад камітэта <strong>KWW ROZTROPNA TROSKA O DOBRO GMINY</strong>. У свае 40 гадоў ён прадэманстраваў гатоўнасць браць на сябе адказнасць за лёс мясцовай супольнасці, што стала важным этапам у фарміраванні яго як грамадскага лідара.</p>
+
+      <h3>НАРАДЖЭННЕ КАМІТЭТА І КАМПАНІЯ ДАПАМОГІ</h3>
+      <p>У снежні 2025 года, усведамляючы маштаб гуманітарнай катастрофы, якая разгортваецца ў Беларусі, Дзяніс Сабко выступіў ініцыятарам стварэння Камітэта Салідарнасці Рэпрэсаваных. Яго першым публічным крокам стаў запуск маштабнай краўдфандзінгавай кампаніі на польскай платформе zrzutka.pl пад лозунгам <em>«Przyłącz się do walki o wolność! Daj szansę Kresom»</em> ("Далучайся да барацьбы за свабоду! Дай шанец Крэсам").</p>
+
+      <h3>МІСІЯ І КАШТОЎНАСЦІ</h3>
+      <p>Камітэт пазіцыянуе сябе не проста як дабрачынны фонд, а як ініцыятыву глыбокай маральнай салідарнасці з людзьмі, якія сталі ахвярамі рэжыму Аляксандра Лукашэнкі. Асаблівы, гістарычна абгрунтаваны акцэнт робіцца на дапамозе палякам і беларусам з гістарычных Крэсаў (усходнія землі былой Рэчы Паспалітай) — рэгіёна, які найбольш моцна пацярпеў ад саветызацыі і сучасных рэпрэсій.</p>
+
+      <h4>НАПРАМКІ ДЗЕЙНАСЦІ:</h4>
       <ul>
-        <li><strong>Прамая фінансавая дапамога:</strong> Мы закрываем зборы на аплату штрафаў, паслуг адвакатаў і перадач у СІЗА і калоніі. Мы працуем напрамую з сем'ямі, абмінаючы бюракратычныя перашкоды.</li>
-        <li><strong>Тэхналогіі супраць дыктатуры:</strong> Выкарыстанне крыптавалют (уключаючы ўласны токен <strong>CHUDO</strong> і USDT) дазваляе нам дастаўляць дапамогу нават ва ўмовах блакіроўкі банкаўскіх рахункаў і татальнага фінансавага кантролю з боку спецслужбаў.</li>
-        <li><strong>Медыцынская рэабілітацыя:</strong> Турма ломіць здароўе, але не дух. Мы аплачваем абследаванні, лячэнне і санаторны адпачынак для былых палітвязняў, дапамагаючы ім вярнуцца да паўнавартаснага жыцця.</li>
-        <li><strong>Клопат пра дзяцей:</strong> Рэпрэсіі б'юць па самых безабаронных. Фонд арганізуе праграмы падтрымкі для дзяцей палітвязняў: ад збору ў школу да навагодніх падарункаў і псіхалагічнай дапамогі.</li>
+          <li><strong>Экстранная гуманітарная дапамога:</strong> Збор сродкаў на прадукты харчавання, цёплае адзенне і прадметы першай неабходнасці для сем'яў палітвязняў.</li>
+          <li><strong>Медыцынская падтрымка:</strong> Закупка і дастаўка дэфіцытных лекаў, аплата аперацый і рэабілітацыі для тых, хто выйшаў з турмаў з падарваным здароўем.</li>
+          <li><strong>Рэлакацыя і прытулак:</strong> Дапамога ў экстранай эвакуацыі з Беларусі, прадастаўленне бяспечнага жытла ў Польшчы (shelter) на першы час.</li>
+          <li><strong>Юрыдычная абарона:</strong> Аплата адвакатаў і штрафаў.</li>
+          <li><strong>Інавацыі:</strong> Выкарыстанне крыптавалют (уключаючы ўласны токен CHUDO) для абыходу банкаўскіх блакіровак.</li>
       </ul>
 
-      <h2>Прынцыпы Празрыстасці і Даверу</h2>
-      <p>У свеце дабрачыннасці давер — гэта самы каштоўны рэсурс. "Сумленны палітвязень" апраўдвае сваю назву на 100%. Мы ўкаранілі сістэму строгай справаздачнасці:</p>
-      <ul>
-        <li>Публікацыя рэгулярных справаздач аб паступленнях і выдатках (з захаваннем мер бяспекі для атрымальнікаў у Беларусі).</li>
-        <li>Выкарыстанне блокчэйн-тэхналогій для фіксацыі транзакцый, што робіць немагчымым крадзеж або нямэтавае выкарыстанне сродкаў.</li>
-        <li>Прамая камунікацыя з донарамі і дыяспарамі.</li>
-      </ul>
+      <p>Камітэт дзейнічае на прынцыпах поўнай празрыстасці і падсправаздачнасці. Кожны злоты, долар ці токен накіроўваюцца непасрэдна тым, хто ў гэтым мае патрэбу. Мы верым, што салідарнасць не мае межаў, а свабода — гэта вышэйшая каштоўнасць, за якую варта змагацца.</p>
 
-      <h2>Наша Глабальная Місія</h2>
-      <p>Камітэт Салідарнасці не абмяжоўваецца толькі матэрыяльнай дапамогай. Мы вядзем інфармацыйную вайну за праўду. Нашы юрысты і праваабаронцы збіраюць дасье на кожнага памагатага рэжыму, каб у будучыні ніхто не пазбег адказнасці. Мы працуем з міжнароднымі судамі, урадамі краін ЕС і ЗША, дамагаючыся новых пакетаў санкцый супраць дыктатуры і праграм падтрымкі для дэмакратычнай Беларусі.</p>
-
-      <p><strong>Памятайце:</strong> Кожная ваша транзакцыя, кожны рэпост, кожнае слова падтрымкі — гэта цаглінка ў сцяну, якая засцеражэ нашых герояў ад бяды. Разам мы — сіла, якую немагчыма зламаць. Жыве Беларусь!</p>
+      <br>
+      <p><em>Z poważaniem,<br>
+      Komitet Solidarności Represjonowanych i Przedstawiciel Komitetu Denis Sobko</em></p>
     `
   },
   en: {
     meta_title: "Committee of Solidarity | Honest Political Prisoner Fund",
-    meta_desc: "Official site of the Committee of Solidarity and the Honest Political Prisoner Fund. Aid, human rights, CHUDO crypto.",
+    meta_desc: "Official site of the Committee of Solidarity and the Honest Political Prisoner Fund. Denis Sobko, Yura Chudzinovich, Ivan.",
     marquee: "COMMITTEE OF SOLIDARITY FOR THE REPRESSED • FREEDOM • JUSTICE • SECURITY • ",
-    founder1_name: "Name Surname 1",
-    founder1_bio: "A man of his word and honor. A leader whose will for freedom has become an example for thousands. He went through trials to build a new Belarus today, where every voice matters.",
-    founder2_name: "Name Surname 2",
-    founder2_bio: "Unbending fighter for justice. A lawyer and human rights defender who dedicated his life to protecting the innocent and fighting lawlessness, regardless of pressure and threats.",
-    founder3_name: "Name Surname 3",
-    founder3_bio: "The voice of truth in dark times. A public figure uniting people for a common goal — freedom, prosperity of the nation, and a safe future for our children.",
-    founder_contact: "Contact",
-    hero_survey_btn: "📝 Questionnaire for assistance to the repressed",
+    
+    video_card_title: "Our Actions",
+    video_card_text: "Chronicle of the fight for freedom.",
+    more_btn: "Details",
 
+    sobko_name: "Denis Sobko",
+    sobko_role: "Chairman of the Committee",
+    sobko_motto: "«Solidarity is our weapon»",
+
+    chudzinovich_name: "Yura Chudzinovich",
+    chudzinovich_motto: "«Freedom for political prisoners!»",
+    
+    ivan_name: "Ivan",
+    ivan_motto: "«Justice will prevail»",
+
+    founder_role: "Committee Founder",
+    founder_contact: "Contact",
+
+    hero_survey_btn: "📝 Questionnaire for assistance",
     card_hrc_title: "Human Rights Center",
     card_hrc_sub: "Democratic Forces of Belarus",
-    card_hrc_text: "We stand guard over the law where they try to destroy it. Our team of lawyers works 24/7, recording violations and seeking justice in international courts. We do not just protect — we restore people's faith that the truth will definitely win.",
+    card_hrc_text: "We stand guard over the law where they try to destroy it. Our team of lawyers works 24/7.",
     card_hrc_btn: "Go to website",
-
+    
     card_honest_title: "Honest Political Prisoner Fund",
-    card_honest_text: "Every dollar donated to the fund turns into real help: paying for lawyers, buying medicines, supporting children of prisoners. Transparency and honesty are our principles. We account for every penny, because trust is our main currency.",
+    card_honest_text: "Every dollar donated turns into real help: paying for lawyers, buying medicines, supporting children.",
     card_honest_btn: "Go to website",
 
     card_urgent_title: "Urgent Assistance",
-    card_urgent_text: "Trouble comes suddenly, and it is important to know that you are not alone. If you were fired, fined, or are in danger — we are here. Our emergency support program is designed to lend a shoulder in the most difficult moment. Do not be afraid to ask for help — it is a sign of strength.",
+    card_urgent_text: "Trouble comes suddenly. We are here.",
     card_urgent_btn: "Questionnaire",
 
     card3_title: "Cryptocurrency CHUDO",
-    card3_text: "This is not just a digital asset, it is a symbol of our independence. In a world where accounts are blocked at the snap of a finger, CHUDO remains an impregnable fortress. We are building a parallel economy of freedom, where every wallet is a personal bank beyond the control of dictatorship.",
+    card3_text: "Symbol of our independence. We are building a parallel economy of freedom.",
+
+    /* NEW CARDS - EN */
+    card_archive_title: "Archive of Repression",
+    card_archive_text: "We document every crime of the regime. No one will be forgotten, nothing will be forgiven.",
+    card_archive_btn: "Open Archive",
+
+    card_volunteer_title: "Become a Volunteer",
+    card_volunteer_text: "Join our team. Your time and skills can save someone's life.",
+    card_volunteer_btn: "Join Us",
+
+    card_psy_title: "Psychological Support",
+    card_psy_text: "Free support for former political prisoners and their families. Healing trauma together.",
+    card_psy_btn: "Get Help",
+
+    card_rehab_title: "Family Rehabilitation",
+    card_rehab_text: "Recovery programs for children of the repressed. Summer camps, education, and care.",
+    card_rehab_btn: "Learn More",
+    
     support_button: "Support Now",
     footer_title1: "Solidarity Committee",
     footer_address: "Address:",
     footer_title3: "Socials",
+    
+    sobko_full_bio: `
+      <h2>COMMITTEE OF SOLIDARITY FOR THE REPRESSED: MISSION AND LEADERSHIP</h2>
+      <p>In an era of unprecedented repression, when hundreds of thousands of Belarusians have become hostages of a dictatorial regime, there was an urgent need to create a structure capable of not only providing targeted assistance but also systematically defending the rights of victims at the international level. The Committee of Solidarity for the Repressed (Komitet Solidarności Represjonowanych) became the answer to this challenge, uniting people ready to act decisively and transparently.</p>
 
-    seo_text: `
-      <h1>Committee of Solidarity and "Honest Political Prisoner" Fund: A Mission of Salvation</h1>
-      <p>In an era of total repression, when the state machine tries to grind any form of dissent into dust, solidarity becomes the only weapon that cannot be taken away. <strong>The Committee of Solidarity for the Repressed</strong> and the <strong>"Honest Political Prisoner" Fund</strong> are not just organizations; they are the shield and sword of civil society, created to protect those who sacrificed their freedom for our common future.</p>
-
-      <h2>"Honest Political Prisoner" Fund: More Than Just Help</h2>
-      <p>The Fund was created in response to an unprecedented level of violence and lawlessness. Our philosophy is simple and unshakable: <em>"No hero should be left alone with the system"</em>. We understand that prison is not only a trial for the prisoner but also a catastrophe for their family. Therefore, our work is comprehensive.</p>
+      <h3>DENIS SOBKO: THE CHAIRMAN'S PATH</h3>
+      <p>At the head of the Committee stands a man whose biography is inextricably linked to both Belarus and Poland, allowing him to effectively build bridges between the diaspora and European institutions. Denis Sobko is a resident of Poland, living in the village of Suchowolce (Suchowolce 52), Kleszczele commune (Kleszczele), Podlaskie Voivodeship.</p>
       
-      <h3>How Does Our Support Work?</h3>
+      <p>His professional path is a story of creating jobs and helping compatriots adapt abroad. In 2017–2023, he successfully ran a sole proprietorship under the brand <strong>BelPolInwest DENIS SOBKO</strong> (NIP: 5423272978, REGON: 367009086). The main activity of his company was an employment agency (PKD 7810Z), which specialized in recruiting qualified workers from Belarus for Polish employers. This experience gave him a deep understanding of the problems migrants face: from legal complexities of legalization to domestic instability.</p>
+
+      <p>In 2024, Denis Sobko also proved himself in the political arena, running for the Kleszczele commune council from the committee <strong>KWW ROZTROPNA TROSKA O DOBRO GMINY</strong>. At the age of 40, he demonstrated a readiness to take responsibility for the fate of the local community, which became an important stage in his formation as a public leader.</p>
+
+      <h3>BIRTH OF THE COMMITTEE AND AID CAMPAIGN</h3>
+      <p>In December 2025, realizing the scale of the humanitarian catastrophe unfolding in Belarus, Denis Sobko initiated the creation of the Committee of Solidarity for the Repressed. His first public step was the launch of a large-scale crowdfunding campaign on the Polish platform zrzutka.pl under the slogan <em>"Przyłącz się do walki o wolność! Daj szansę Kresom"</em> ("Join the fight for freedom! Give Kresy a chance").</p>
+
+      <h3>MISSION AND VALUES</h3>
+      <p>The Committee positions itself not just as a charitable foundation, but as an initiative of deep moral solidarity with people who have become victims of the regime of Alexander Lukashenko. Special, historically grounded emphasis is placed on helping Poles and Belarusians from the historical Kresy (eastern lands of the former Polish-Lithuanian Commonwealth) — a region that suffered most from Sovietization and modern repressions.</p>
+
+      <h4>AREAS OF ACTIVITY:</h4>
       <ul>
-        <li><strong>Direct Financial Aid:</strong> We cover fundraising for fines, lawyer fees, and parcels to pre-trial detention centers and penal colonies. We work directly with families, bypassing bureaucratic obstacles.</li>
-        <li><strong>Technology Against Dictatorship:</strong> The use of cryptocurrencies (including our own token <strong>CHUDO</strong> and USDT) allows us to deliver aid even under conditions of blocked bank accounts and total financial control by special services.</li>
-        <li><strong>Medical Rehabilitation:</strong> Prison breaks health, but not the spirit. We pay for examinations, treatment, and sanatorium rest for former political prisoners, helping them return to a full life.</li>
-        <li><strong>Care for Children:</strong> Repressions hit the most defenseless. The Fund organizes support programs for the children of political prisoners: from getting ready for school to New Year's gifts and psychological help.</li>
+          <li><strong>Emergency Humanitarian Aid:</strong> Fundraising for food, warm clothing, and essential items for families of political prisoners.</li>
+          <li><strong>Medical Support:</strong> Purchasing and delivering scarce medicines, paying for surgeries and rehabilitation for those released from prisons with ruined health.</li>
+          <li><strong>Relocation and Asylum:</strong> Assistance in emergency evacuation from Belarus, providing safe housing in Poland (shelter) for the initial period.</li>
+          <li><strong>Legal Defense:</strong> Payment of lawyers and fines.</li>
+          <li><strong>Innovation:</strong> Use of cryptocurrencies (including our own token CHUDO) to bypass banking blocks.</li>
       </ul>
 
-      <h2>Principles of Transparency and Trust</h2>
-      <p>In the world of charity, trust is the most valuable resource. "Honest Political Prisoner" lives up to its name 100%. We have implemented a strict reporting system:</p>
-      <ul>
-        <li>Publication of regular reports on income and expenses (while observing security measures for recipients in Belarus).</li>
-        <li>Use of blockchain technologies to record transactions, making theft or misuse of funds impossible.</li>
-        <li>Direct communication with donors and diasporas.</li>
-      </ul>
+      <p>The Committee operates on principles of full transparency and accountability. Every zloty, dollar, or token goes directly to those in need. We believe that solidarity has no borders, and freedom is the highest value worth fighting for.</p>
 
-      <h2>Our Global Mission</h2>
-      <p>The Solidarity Committee is not limited to material aid alone. We are waging an information war for the truth. Our lawyers and human rights defenders are collecting dossiers on every accomplice of the regime so that in the future no one escapes responsibility. We work with international courts, the governments of the EU and the USA, seeking new sanctions packages against the dictatorship and support programs for a democratic Belarus.</p>
-
-      <p><strong>Remember:</strong> Every transaction, every repost, every word of support is a brick in the wall that will protect our heroes from trouble. Together we are a force that cannot be broken. Long live Belarus!</p>
+      <br>
+      <p><em>Z poważaniem,<br>
+      Komitet Solidarności Represjonowanych i Przedstawiciel Komitetu Denis Sobko</em></p>
     `
   },
   pl: {
     meta_title: "Komitet Solidarności | Fundusz Uczciwy Więzień Polityczny",
-    meta_desc: "Oficjalna strona Komitetu Solidarności i Funduszu Uczciwy Więzień Polityczny. Pomoc, prawa człowieka, kryptowaluta CHUDO.",
+    meta_desc: "Oficjalna strona Komitetu Solidarności. Denis Sobko, Jurij Chudzinowicz, Iwan.",
     marquee: "KOMITET SOLIDARNOŚCI REPRESJONOWANYCH • OCHRONA PRAW • WOLNOŚĆ • BEZPIECZEŃSTWO I SPRAWIEDLIWOŚĆ • ",
-    founder1_name: "Imię Nazwisko 1",
-    founder1_bio: "Człowiek słowa i honoru. Lider, którego wola wolności stała się przykładem dla tysięcy. Przeszedł przez próby, by dziś budować nową Białoruś, gdzie każdy głos ma znaczenie.",
-    founder2_name: "Imię Nazwisko 2",
-    founder2_bio: "Niezłomny bojownik o sprawiedliwość. Prawnik i obrońca praw człowieka, który poświęcił życie ochronie niewinnych i walce z bezprawiem, mimo presji i gróźb.",
-    founder3_name: "Imię Nazwisko 3",
-    founder3_bio: "Głos prawdy w mrocznych czasach. Działacz społeczny jednoczący ludzi dla wspólnego celu — wolności, dobrobytu narodu i bezpiecznej przyszłości dla naszych dzieci.",
-    founder_contact: "Kontakt",
-    hero_survey_btn: "📝 Ankieta dotycząca pomocy represjonowanym",
+    
+    video_card_title: "Nasze działania",
+    video_card_text: "Kronika walki o wolność.",
+    more_btn: "Więcej",
 
+    sobko_name: "Denis Sobko",
+    sobko_role: "Przewodniczący Komitetu",
+    sobko_motto: "«Solidarność to nasza broń»",
+
+    chudzinovich_name: "Jurij Chudzinowicz",
+    chudzinovich_motto: "«Wolność dla więźniów politycznych!»",
+    
+    ivan_name: "Iwan",
+    ivan_motto: "«Prawda zawsze zwycięży»",
+
+    founder_role: "Założyciel Komitetu",
+    founder_contact: "Kontakt",
+
+    hero_survey_btn: "📝 Ankieta dotycząca pomocy",
     card_hrc_title: "Centrum Obrony Praw Człowieka",
     card_hrc_sub: "Demokratyczne Siły Białorusi",
-    card_hrc_text: "Stoimy na straży prawa tam, gdzie próbuje się je zniszczyć. Nasz zespół prawników pracuje 24/7, rejestrując naruszenia i dochodząc sprawiedliwości w instancjach międzynarodowych. Nie tylko bronimy — przywracamy ludziom wiarę w to, że prawda na pewno zwycięży.",
+    card_hrc_text: "Stoimy na straży prawa tam, gdzie próbuje się je zniszczyć. Nasz zespół prawników pracuje 24/7.",
     card_hrc_btn: "Przejdź na stronę",
-
+    
     card_honest_title: "Fundusz Uczciwy Więzień Polityczny",
-    card_honest_text: "Każda złotówka przekazana na fundusz zamienia się w realną pomoc: opłacenie prawników, zakup leków, wsparcie dzieci więźniów. Przejrzystość i uczciwość to nasze zasady. Rozliczamy się z każdego grosza, bo zaufanie to nasza główna waluta.",
+    card_honest_text: "Każda złotówka zamienia się w realną pomoc: opłacenie prawników, zakup leków, wsparcie dzieci.",
     card_honest_btn: "Przejdź na stronę",
 
     card_urgent_title: "Pilna Pomoc",
-    card_urgent_text: "Nieszczęście przychodzi nagle i ważne jest, by wiedzieć, że nie jesteś sam. Jeśli zostałeś zwolniony, ukarany grzywną lub grozi ci niebezpieczeństwo — jesteśmy blisko. Nasz program wsparcia awaryjnego został stworzony, aby podać ramię w najtrudniejszej chwili. Nie bój się prosić o pomoc — to oznaka siły.",
+    card_urgent_text: "Nieszczęście przychodzi nagle. Jesteśmy blisko.",
     card_urgent_btn: "Ankieta",
 
     card3_title: "Kryptowaluta CHUDO",
-    card3_text: "To nie tylko cyfrowe aktywo, to symbol naszej niezależności. W świecie, gdzie konta są blokowane na pstryknięcie palcem, CHUDO pozostaje niezdobytą twierdzą. Budujemy równoległą gospodarkę wolności, gdzie każdy portfel to osobisty bank, niezależny od dyktatury.",
+    card3_text: "Symbol naszej niezależności. Budujemy równoległą gospodarkę wolności.",
+
+    /* NEW CARDS - PL */
+    card_archive_title: "Archiwum Represji",
+    card_archive_text: "Dokumentujemy każdą zbrodnię reżimu. Nikt nie zostanie zapomniany, nic nie zostanie wybaczone.",
+    card_archive_btn: "Otwórz archiwum",
+
+    card_volunteer_title: "Zostań wolontariuszem",
+    card_volunteer_text: "Dołącz do naszego zespołu. Twój czas i umiejętności mogą uratować czyjeś życie.",
+    card_volunteer_btn: "Dołącz",
+
+    card_psy_title: "Wsparcie Psychologiczne",
+    card_psy_text: "Bezpłatna pomoc dla byłych więźniów politycznych i ich rodzin. Razem leczymy traumy.",
+    card_psy_btn: "Uzyskaj pomoc",
+
+    card_rehab_title: "Rehabilitacja Rodzin",
+    card_rehab_text: "Programy regeneracyjne dla dzieci represjonowanych. Obozy letnie, edukacja i opieka.",
+    card_rehab_btn: "Dowiedz się więcej",
+    
     support_button: "Wesprzyj teraz",
     footer_title1: "Komitet Solidarności",
     footer_address: "Adres:",
     footer_title3: "Media społecznościowe",
+    
+    sobko_full_bio: `
+      <h2>KOMITET SOLIDARNOŚCI REPRESJONOWANYCH: MISJA I PRZYWÓDZTWO</h2>
+      <p>W dobie bezprecedensowych represji, gdy setki tysięcy Białorusinów stały się zakładnikami dyktatorskiego reżimu, zaistniała pilna potrzeba stworzenia struktury zdolnej nie tylko do niesienia pomocy doraźnej, ale i systemowej obrony praw poszkodowanych na arenie międzynarodowej. Komitet Solidarności Represjonowanych stał się odpowiedzią na to wyzwanie, jednocząc wokół siebie ludzi gotowych działać zdecydowanie i przejrzyście.</p>
 
-    seo_text: `
-      <h1>Komitet Solidarności i Fundusz "Uczciwy Więzień Polityczny": Misja Ratunkowa</h1>
-      <p>W dobie totalnych represji, gdy machina państwowa próbuje zmiażdżyć wszelkie przejawy sprzeciwu, solidarność staje się jedyną bronią, której nie można odebrać. <strong>Komitet Solidarności Represjonowanych</strong> i <strong>Fundusz "Uczciwy Więzień Polityczny"</strong> to nie tylko organizacje; to tarcza i miecz społeczeństwa obywatelskiego, stworzone w celu ochrony tych, którzy poświęcili swoją wolność dla naszej wspólnej przyszłości.</p>
-
-      <h2>Fundusz "Uczciwy Więzień Polityczny": Więcej niż tylko pomoc</h2>
-      <p>Fundusz powstał jako odpowiedź na bezprecedensowy poziom przemocy i bezprawia. Nasza filozofia jest prosta i niezachwiana: <em>"Żaden bohater nie powinien zostać sam na sam z systemem"</em>. Rozumiemy, że więzienie to nie tylko próba dla więźnia, ale także katastrofa dla jego rodziny. Dlatego nasza praca ma charakter kompleksowy.</p>
+      <h3>DENIS SOBKO: DROGA PRZEWODNICZĄCEGO</h3>
+      <p>Na czele Komitetu stoi człowiek, którego biografia jest nierozerwalnie związana zarówno z Białorusią, jak i Polską, co pozwala mu skutecznie budować mosty między diasporą a instytucjami europejskimi. Denis Sobko to mieszkaniec Polski, zamieszkały we wsi Suchowolce (Suchowolce 52), gmina Kleszczele, województwo podlaskie.</p>
       
-      <h3>Jak działa nasze wsparcie?</h3>
+      <p>Jego droga zawodowa to historia tworzenia miejsc pracy i pomocy rodakom w adaptacji za granicą. W latach 2017–2023 z sukcesem prowadził działalność gospodarczą pod marką <strong>BelPolInwest DENIS SOBKO</strong> (NIP: 5423272978, REGON: 367009086). Głównym przedmiotem działalności jego firmy była agencja zatrudnienia (PKD 7810Z), która specjalizowała się w rekrutacji wykwalifikowanych pracowników z Białorusi dla polskich pracodawców. To doświadczenie dało mu głębokie zrozumienie problemów, z jakimi borykają się migranci: od zawiłości prawnych legalizacji po trudności bytowe.</p>
+
+      <p>W 2024 roku Denis Sobko sprawdził się również na polu politycznym, kandydując do rady gminy Kleszczele z ramienia komitetu <strong>KWW ROZTROPNA TROSKA O DOBRO GMINY</strong>. W wieku 40 lat wykazał gotowość do wzięcia odpowiedzialności za losy lokalnej społeczności, co stało się ważnym etapem w kształtowaniu go jako lidera społecznego.</p>
+
+      <h3>NARODZINY KOMITETU I KAMPANIA POMOCOWA</h3>
+      <p>W grudniu 2025 roku, świadomy skali katastrofy humanitarnej rozgrywającej się na Białorusi, Denis Sobko zainicjował powstanie Komitetu Solidarności Represjonowanych. Jego pierwszym publicznym krokiem było uruchomienie szeroko zakrojonej kampanii crowdfundingowej na platformie zrzutka.pl pod hasłem <em>„Przyłącz się do walki o wolność! Daj szansę Kresom”</em>.</p>
+
+      <h3>MISJA I WARTOŚCI</h3>
+      <p>Komitet pozycjonuje się nie tylko jako fundacja charytatywna, ale jako inicjatywa głębokiej solidarności moralnej z ludźmi, którzy stali się ofiarami reżimu Aleksandra Łukaszenki. Szczególny, historycznie uzasadniony nacisk kładziony jest na pomoc Polakom i Białorusinom z historycznych Kresów – regionu, który najbardziej ucierpiał wskutek sowietyzacji i współczesnych represji.</p>
+
+      <h4>OBSZARY DZIAŁANIA:</h4>
       <ul>
-        <li><strong>Bezpośrednia pomoc finansowa:</strong> Pokrywamy zbiórki na opłacenie grzywien, usług prawniczych oraz paczek do aresztów śledczych i kolonii karnych. Działamy bezpośrednio z rodzinami, omijając biurokratyczne przeszkody.</li>
-        <li><strong>Technologie przeciwko dyktaturze:</strong> Wykorzystanie kryptowalut (w tym własnego tokena <strong>CHUDO</strong> i USDT) pozwala nam dostarczać pomoc nawet w warunkach blokady kont bankowych i całkowitej kontroli finansowej ze strony służb specjalnych.</li>
-        <li><strong>Rehabilitacja medyczna:</strong> Więzienie łamie zdrowie, ale nie ducha. Opłacamy badania, leczenie i pobyty sanatoryjne dla byłych więźniów politycznych, pomagając im wrócić do pełni życia.</li>
-        <li><strong>Troska o dzieci:</strong> Represje uderzają w najbardziej bezbronnych. Fundusz organizuje programy wsparcia dla dzieci więźniów politycznych: od wyprawki szkolnej po prezenty noworoczne i pomoc psychologiczną.</li>
+          <li><strong>Doraźna pomoc humanitarna:</strong> Zbiórka środków na żywność, ciepłą odzież i artykuły pierwszej potrzeby dla rodzin więźniów politycznych.</li>
+          <li><strong>Wsparcie medyczne:</strong> Zakup i dostarczanie deficytowych leków, opłacanie operacji i rehabilitacji dla osób, które opuściły więzienia ze zrujnowanym zdrowiem.</li>
+          <li><strong>Relokacja i schronienie:</strong> Pomoc w ewakuacji z Białorusi, zapewnienie bezpiecznego zakwaterowania w Polsce na pierwszy okres.</li>
+          <li><strong>Ochrona prawna:</strong> Opłacanie adwokatów i grzywien.</li>
+          <li><strong>Innowacje:</strong> Wykorzystanie kryptowalut (w tym własnego tokena CHUDO) do omijania blokad bankowych.</li>
       </ul>
 
-      <h2>Zasady Przejrzystości i Zaufania</h2>
-      <p>W świecie dobroczynności zaufanie to najcenniejszy zasób. "Uczciwy Więzień Polityczny" w 100% uzasadnia swoją nazwę. Wdrożyliśmy system ścisłej sprawozdawczości:</p>
-      <ul>
-        <li>Publikacja regularnych raportów o wpływach i wydatkach (z zachowaniem środków bezpieczeństwa dla odbiorców na Białorusi).</li>
-        <li>Wykorzystanie technologii blockchain do rejestrowania transakcji, co uniemożliwia kradzież lub niewłaściwe wykorzystanie środków.</li>
-        <li>Bezpośrednia komunikacja z darczyńcami i diasporami.</li>
-      </ul>
+      <p>Komitet działa na zasadach pełnej przejrzystości i rozliczalności. Każda złotówka, dolar czy token trafiają bezpośrednio do potrzebujących. Wierzymy, że solidarność nie ma granic, a wolność to najwyższa wartość, o którą warto walczyć.</p>
 
-      <h2>Nasza Globalna Misja</h2>
-      <p>Komitet Solidarności nie ogranicza się tylko do pomocy materialnej. Prowadzimy wojnę informacyjną o prawdę. Nasi prawnicy i obrońcy praw człowieka zbierają dossier na każdego poplecznika reżimu, aby w przyszłości nikt nie uniknął odpowiedzialności. Współpracujemy z sądami międzynarodowymi, rządami krajów UE i USA, dążąc do nowych pakietów sankcji przeciwko dyktaturze i programów wsparcia dla demokratycznej Białorusi.</p>
-
-      <p><strong>Pamiętaj:</strong> Każda twoja transakcja, każde udostępnienie, każde słowo wsparcia to cegiełka w murze, który ochroni naszych bohaterów przed nieszczęściem. Razem jesteśmy siłą, której nie można złamać. Żywie Białoruś!</p>
+      <br>
+      <p><em>Z poważaniem,<br>
+      Komitet Solidarności Represjonowanych i Przedstawiciel Komitetu Denis Sobko</em></p>
     `
   }
 };
